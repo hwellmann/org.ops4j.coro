@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.ops4j.coro.model/src" modelPluginID="org.ops4j.coro.model"
+    modelName="CoroScore" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>CoroScore.ecore</foreignModel>
+  <genPackages prefix="Score" basePackage="org.ops4j.coro.model" disposableProviderFactory="true"
+      ecorePackage="CoroScore.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CoroScore.ecore#//Step">
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//Step/C"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//Step/D"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//Step/E"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//Step/F"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//Step/G"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//Step/A"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//Step/B"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CoroScore.ecore#//NoteType">
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//NoteType/MAXIMA"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//NoteType/LONG"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//NoteType/BREVE"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//NoteType/WHOLE"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//NoteType/HALF"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//NoteType/QUARTER"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//NoteType/EIGHTH"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//NoteType/N16TH"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//NoteType/N32ND"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//NoteType/N64TH"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//NoteType/N128TH"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CoroScore.ecore#//AccidentalType">
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//AccidentalType/NATURAL"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//AccidentalType/FLAT"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//AccidentalType/SHARP"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CoroScore.ecore#//TimeSymbol">
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//TimeSymbol/COMMON"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//TimeSymbol/CUT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CoroScore.ecore#//ClefSign">
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//ClefSign/C"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//ClefSign/F"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//ClefSign/G"/>
+    </genEnums>
+    <genClasses ecoreClass="CoroScore.ecore#//Score">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Score/partList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Score/parts"/>
+    </genClasses>
+    <genClasses ecoreClass="CoroScore.ecore#//Staff"/>
+    <genClasses ecoreClass="CoroScore.ecore#//Part">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Part/measures"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference CoroScore.ecore#//Part/score"/>
+    </genClasses>
+    <genClasses ecoreClass="CoroScore.ecore#//StaffGroup"/>
+    <genClasses ecoreClass="CoroScore.ecore#//PartList">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CoroScore.ecore#//PartList/parts"/>
+    </genClasses>
+    <genClasses ecoreClass="CoroScore.ecore#//Measure">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Measure/notes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Measure/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Measure/time"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Measure/clef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference CoroScore.ecore#//Measure/part"/>
+    </genClasses>
+    <genClasses ecoreClass="CoroScore.ecore#//Note">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Note/pitch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Note/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Note/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Note/accidental"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference CoroScore.ecore#//Note/measure"/>
+    </genClasses>
+    <genClasses ecoreClass="CoroScore.ecore#//Pitch">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Pitch/octave"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Pitch/alteration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Pitch/step"/>
+    </genClasses>
+    <genClasses ecoreClass="CoroScore.ecore#//Key">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Key/fifths"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Key/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="CoroScore.ecore#//Time">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Time/numerator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Time/denominator"/>
+    </genClasses>
+    <genClasses ecoreClass="CoroScore.ecore#//Clef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Clef/sign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Clef/line"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Clef/octaveChange"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
