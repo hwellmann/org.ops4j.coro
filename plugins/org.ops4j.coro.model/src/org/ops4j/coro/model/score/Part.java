@@ -2,6 +2,7 @@
  */
 package org.ops4j.coro.model.score;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -23,7 +24,8 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Part extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Measures</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Measures</b></em>' containment reference list.
+	 * The list contents are of type {@link org.ops4j.coro.model.score.Measure}.
 	 * It is bidirectional and its opposite is '{@link org.ops4j.coro.model.score.Measure#getPart <em>Part</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -31,24 +33,13 @@ public interface Part extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Measures</em>' containment reference.
-	 * @see #setMeasures(Measure)
+	 * @return the value of the '<em>Measures</em>' containment reference list.
 	 * @see org.ops4j.coro.model.score.ScorePackage#getPart_Measures()
 	 * @see org.ops4j.coro.model.score.Measure#getPart
 	 * @model opposite="part" containment="true"
 	 * @generated
 	 */
-	Measure getMeasures();
-
-	/**
-	 * Sets the value of the '{@link org.ops4j.coro.model.score.Part#getMeasures <em>Measures</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Measures</em>' containment reference.
-	 * @see #getMeasures()
-	 * @generated
-	 */
-	void setMeasures(Measure value);
+	EList<Measure> getMeasures();
 
 	/**
 	 * Returns the value of the '<em><b>Score</b></em>' container reference.

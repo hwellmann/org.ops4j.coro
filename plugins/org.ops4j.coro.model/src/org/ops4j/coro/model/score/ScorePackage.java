@@ -142,7 +142,7 @@ public interface ScorePackage extends EPackage {
 	int PART = 2;
 
 	/**
-	 * The feature id for the '<em><b>Measures</b></em>' containment reference.
+	 * The feature id for the '<em><b>Measures</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -694,10 +694,10 @@ public interface ScorePackage extends EPackage {
 	EClass getPart();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.ops4j.coro.model.score.Part#getMeasures <em>Measures</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.ops4j.coro.model.score.Part#getMeasures <em>Measures</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Measures</em>'.
+	 * @return the meta object for the containment reference list '<em>Measures</em>'.
 	 * @see org.ops4j.coro.model.score.Part#getMeasures()
 	 * @see #getPart()
 	 * @generated
@@ -1146,7 +1146,7 @@ public interface ScorePackage extends EPackage {
 		EClass PART = eINSTANCE.getPart();
 
 		/**
-		 * The meta object literal for the '<em><b>Measures</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Measures</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

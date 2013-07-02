@@ -9,8 +9,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Staff"/>
   <eClassifiers xsi:type="ecore:EClass" name="Part">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="measures" eType="#//Measure"
-        containment="true" eOpposite="#//Measure/part"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="measures" upperBound="-1"
+        eType="#//Measure" containment="true" eOpposite="#//Measure/part"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="score" lowerBound="1" eType="#//Score"
         eOpposite="#//Score/parts"/>
   </eClassifiers>

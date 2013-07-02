@@ -2,17 +2,21 @@
  */
 package org.ops4j.coro.model.score.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.ops4j.coro.model.score.Measure;
 import org.ops4j.coro.model.score.Part;
 import org.ops4j.coro.model.score.Score;
@@ -34,14 +38,14 @@ import org.ops4j.coro.model.score.ScorePackage;
  */
 public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	/**
-	 * The cached value of the '{@link #getMeasures() <em>Measures</em>}' containment reference.
+	 * The cached value of the '{@link #getMeasures() <em>Measures</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMeasures()
 	 * @generated
 	 * @ordered
 	 */
-	protected Measure measures;
+	protected EList<Measure> measures;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,42 +71,11 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Measure getMeasures() {
+	public EList<Measure> getMeasures() {
+		if (measures == null) {
+			measures = new EObjectContainmentWithInverseEList<Measure>(Measure.class, this, ScorePackage.PART__MEASURES, ScorePackage.MEASURE__PART);
+		}
 		return measures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetMeasures(Measure newMeasures, NotificationChain msgs) {
-		Measure oldMeasures = measures;
-		measures = newMeasures;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScorePackage.PART__MEASURES, oldMeasures, newMeasures);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMeasures(Measure newMeasures) {
-		if (newMeasures != measures) {
-			NotificationChain msgs = null;
-			if (measures != null)
-				msgs = ((InternalEObject)measures).eInverseRemove(this, ScorePackage.MEASURE__PART, Measure.class, msgs);
-			if (newMeasures != null)
-				msgs = ((InternalEObject)newMeasures).eInverseAdd(this, ScorePackage.MEASURE__PART, Measure.class, msgs);
-			msgs = basicSetMeasures(newMeasures, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.PART__MEASURES, newMeasures, newMeasures));
 	}
 
 	/**
@@ -151,13 +124,12 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ScorePackage.PART__MEASURES:
-				if (measures != null)
-					msgs = ((InternalEObject)measures).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScorePackage.PART__MEASURES, null, msgs);
-				return basicSetMeasures((Measure)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMeasures()).basicAdd(otherEnd, msgs);
 			case ScorePackage.PART__SCORE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -175,7 +147,7 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ScorePackage.PART__MEASURES:
-				return basicSetMeasures(null, msgs);
+				return ((InternalEList<?>)getMeasures()).basicRemove(otherEnd, msgs);
 			case ScorePackage.PART__SCORE:
 				return basicSetScore(null, msgs);
 		}
@@ -217,11 +189,13 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ScorePackage.PART__MEASURES:
-				setMeasures((Measure)newValue);
+				getMeasures().clear();
+				getMeasures().addAll((Collection<? extends Measure>)newValue);
 				return;
 			case ScorePackage.PART__SCORE:
 				setScore((Score)newValue);
@@ -239,7 +213,7 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case ScorePackage.PART__MEASURES:
-				setMeasures((Measure)null);
+				getMeasures().clear();
 				return;
 			case ScorePackage.PART__SCORE:
 				setScore((Score)null);
@@ -257,7 +231,7 @@ public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ScorePackage.PART__MEASURES:
-				return measures != null;
+				return measures != null && !measures.isEmpty();
 			case ScorePackage.PART__SCORE:
 				return getScore() != null;
 		}
