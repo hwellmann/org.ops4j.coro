@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Coro UI Score Editor
+Bundle-SymbolicName: org.ops4j.coro.ui.score.editor;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.8.100",
+ org.eclipse.ui.ide;bundle-version="3.9.0",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.9.0",
+ org.eclipse.emf.workspace;bundle-version="1.5.1",
+ org.eclipse.graphiti;bundle-version="0.10.0",
+ org.eclipse.graphiti.ui;bundle-version="0.10.0",
+ org.ops4j.coro.model;bundle-version="0.1.0"
