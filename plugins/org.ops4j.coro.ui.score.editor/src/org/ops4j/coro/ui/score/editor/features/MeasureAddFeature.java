@@ -6,6 +6,7 @@ import org.eclipse.graphiti.features.impl.AbstractAddShapeFeature;
 import org.eclipse.graphiti.mm.algorithms.Rectangle;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
+import org.eclipse.graphiti.mm.pictograms.Shape;
 import org.eclipse.graphiti.services.Graphiti;
 import org.eclipse.graphiti.services.IGaService;
 import org.eclipse.graphiti.services.IPeCreateService;
@@ -28,11 +29,15 @@ public class MeasureAddFeature extends AbstractAddShapeFeature {
             context.getTargetContainer(), true);
 
         IGaService gaService = Graphiti.getGaService();
-        Rectangle rectangle = gaService.createPlainRectangle(containerShape);
+        Rectangle rectangle = gaService.createInvisibleRectangle(containerShape);
         int width = Math.max(context.getWidth(), 100);
         int height = 40;
         gaService.setLocationAndSize(rectangle, context.getX(), context.getY(), width, height);
 
+        Shape shape = peCreateService.createShape(containerShape, false);
+        gaService.createPlainPolyline(shape, new int[] { width-5, 0, width-5, height });            
+        
+        
         link(containerShape, context.getNewObject());
         return containerShape;
     }
