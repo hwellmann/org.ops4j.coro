@@ -1,5 +1,6 @@
 package org.ops4j.coro.ui.score.editor.features;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.features.IDirectEditingInfo;
 import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.context.IAddContext;
@@ -28,8 +29,15 @@ public class MeasureAddFeature extends AbstractAddShapeFeature {
 
     public PictogramElement add(IAddContext context) {
         IPeCreateService peCreateService = Graphiti.getPeCreateService();
+        ContainerShape targetContainer = context.getTargetContainer();
+        EObject parentObject = targetContainer.getLink().getBusinessObjects().get(0);
+        
+        if (parentObject instanceof Measure) {
+            targetContainer = targetContainer.getContainer();
+        }
+        
         ContainerShape containerShape = peCreateService.createContainerShape(
-            context.getTargetContainer(), true);
+            targetContainer, true);
 
         Measure measure = (Measure) context.getNewObject();
         

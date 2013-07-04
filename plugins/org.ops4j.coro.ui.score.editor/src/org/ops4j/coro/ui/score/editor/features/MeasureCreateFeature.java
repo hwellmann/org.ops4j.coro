@@ -2,6 +2,7 @@ package org.ops4j.coro.ui.score.editor.features;
 
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.context.ICreateContext;
@@ -19,12 +20,16 @@ public class MeasureCreateFeature extends AbstractCreateFeature {
 
     public boolean canCreate(ICreateContext context) {
         ContainerShape target = context.getTargetContainer();
-        if (! (target instanceof ContainerShape)) {
+        if (!(target instanceof ContainerShape)) {
             return false;
         }
         List<EObject> containerObjects = context.getTargetContainer().getLink()
             .getBusinessObjects();
-        return !containerObjects.isEmpty() && (containerObjects.get(0) instanceof Part);
+        if (containerObjects.isEmpty()) {
+            return false;
+        }
+        EObject container = containerObjects.get(0);
+        return (container instanceof Part) || (container instanceof Measure);
     }
 
     public Object[] create(ICreateContext context) {
@@ -32,16 +37,27 @@ public class MeasureCreateFeature extends AbstractCreateFeature {
         List<EObject> containerObjects = context.getTargetContainer().getLink()
             .getBusinessObjects();
 
-        Part part = (Part) containerObjects.get(0);
-        List<Measure> measures = part.getMeasures();
         Measure measure = ScoreFactory.eINSTANCE.createMeasure();
-        int number = measures.size() + 1;
-        measure.setMarker("M" + number);
-        measures.add(measure);
+
+        EObject container = containerObjects.get(0);
+        if (container instanceof Part) {
+            Part part = (Part) container;
+            List<Measure> measures = part.getMeasures();
+            int number = measures.size() + 1;
+            measure.setMarker("M" + number);
+            measures.add(measure);
+        }
+        else if (container instanceof Measure) {
+            Measure previousMeasure = (Measure) container;
+            EList<Measure> measures = previousMeasure.getPart().getMeasures();
+            int number = measures.size() + 1;
+            measure.setMarker("M" + number);
+            int index = measures.indexOf(previousMeasure);
+            measures.add(index+1, measure);
+        }
 
         // add the corresponding graphical representation
         addGraphicalRepresentation(context, measure);
-
         return new Object[] { measure };
     }
 
