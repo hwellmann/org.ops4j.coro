@@ -59,6 +59,7 @@ public class MeasureAddFeature extends AbstractAddShapeFeature {
         gaService.setLocationAndSize(text, 0, 10, width, 20);
 
         // create link and wire it
+        link(containerShape, measure);
         link(markerShape, measure);
 
         // provide information to support direct-editing directly
@@ -72,7 +73,7 @@ public class MeasureAddFeature extends AbstractAddShapeFeature {
         directEditingInfo.setGraphicsAlgorithm(text);
         
         
-        link(containerShape, measure);
+        layoutPictogramElement(targetContainer);
         return containerShape;
     }
 
