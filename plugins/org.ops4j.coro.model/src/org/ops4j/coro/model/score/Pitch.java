@@ -24,84 +24,84 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Pitch extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Octave</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Octave</b></em>' attribute.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Octave</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Octave</em>' attribute.
-	 * @see #setOctave(int)
-	 * @see org.ops4j.coro.model.score.ScorePackage#getPitch_Octave()
-	 * @model
-	 * @generated
-	 */
+     * @return the value of the '<em>Octave</em>' attribute.
+     * @see #setOctave(int)
+     * @see org.ops4j.coro.model.score.ScorePackage#getPitch_Octave()
+     * @model
+     * @generated
+     */
 	int getOctave();
 
 	/**
-	 * Sets the value of the '{@link org.ops4j.coro.model.score.Pitch#getOctave <em>Octave</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link org.ops4j.coro.model.score.Pitch#getOctave <em>Octave</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Octave</em>' attribute.
-	 * @see #getOctave()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Octave</em>' attribute.
+     * @see #getOctave()
+     * @generated
+     */
 	void setOctave(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Alteration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Alteration</b></em>' attribute.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Alteration</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Alteration</em>' attribute.
-	 * @see #setAlteration(float)
-	 * @see org.ops4j.coro.model.score.ScorePackage#getPitch_Alteration()
-	 * @model
-	 * @generated
-	 */
+     * @return the value of the '<em>Alteration</em>' attribute.
+     * @see #setAlteration(float)
+     * @see org.ops4j.coro.model.score.ScorePackage#getPitch_Alteration()
+     * @model
+     * @generated
+     */
 	float getAlteration();
 
 	/**
-	 * Sets the value of the '{@link org.ops4j.coro.model.score.Pitch#getAlteration <em>Alteration</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link org.ops4j.coro.model.score.Pitch#getAlteration <em>Alteration</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Alteration</em>' attribute.
-	 * @see #getAlteration()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Alteration</em>' attribute.
+     * @see #getAlteration()
+     * @generated
+     */
 	void setAlteration(float value);
 
 	/**
-	 * Returns the value of the '<em><b>Step</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.ops4j.coro.model.score.Step}.
-	 * <!-- begin-user-doc -->
+     * Returns the value of the '<em><b>Step</b></em>' attribute.
+     * The literals are from the enumeration {@link org.ops4j.coro.model.score.Step}.
+     * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Step</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Step</em>' attribute.
-	 * @see org.ops4j.coro.model.score.Step
-	 * @see #setStep(Step)
-	 * @see org.ops4j.coro.model.score.ScorePackage#getPitch_Step()
-	 * @model
-	 * @generated
-	 */
+     * @return the value of the '<em>Step</em>' attribute.
+     * @see org.ops4j.coro.model.score.Step
+     * @see #setStep(Step)
+     * @see org.ops4j.coro.model.score.ScorePackage#getPitch_Step()
+     * @model
+     * @generated
+     */
 	Step getStep();
 
 	/**
-	 * Sets the value of the '{@link org.ops4j.coro.model.score.Pitch#getStep <em>Step</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * Sets the value of the '{@link org.ops4j.coro.model.score.Pitch#getStep <em>Step</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Step</em>' attribute.
-	 * @see org.ops4j.coro.model.score.Step
-	 * @see #getStep()
-	 * @generated
-	 */
+     * @param value the new value of the '<em>Step</em>' attribute.
+     * @see org.ops4j.coro.model.score.Step
+     * @see #getStep()
+     * @generated
+     */
 	void setStep(Step value);
 
 } // Pitch

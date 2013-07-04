@@ -21,332 +21,332 @@ import org.ops4j.coro.model.score.*;
  */
 public class ScoreFactoryImpl extends EFactoryImpl implements ScoreFactory {
 	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
+     * Creates the default factory implementation.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public static ScoreFactory init() {
-		try {
-			ScoreFactory theScoreFactory = (ScoreFactory)EPackage.Registry.INSTANCE.getEFactory(ScorePackage.eNS_URI);
-			if (theScoreFactory != null) {
-				return theScoreFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new ScoreFactoryImpl();
-	}
+        try {
+            ScoreFactory theScoreFactory = (ScoreFactory)EPackage.Registry.INSTANCE.getEFactory(ScorePackage.eNS_URI);
+            if (theScoreFactory != null) {
+                return theScoreFactory;
+            }
+        }
+        catch (Exception exception) {
+            EcorePlugin.INSTANCE.log(exception);
+        }
+        return new ScoreFactoryImpl();
+    }
 
 	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
+     * Creates an instance of the factory.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public ScoreFactoryImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case ScorePackage.SCORE: return createScore();
-			case ScorePackage.STAFF: return createStaff();
-			case ScorePackage.PART: return createPart();
-			case ScorePackage.STAFF_GROUP: return createStaffGroup();
-			case ScorePackage.PART_LIST: return createPartList();
-			case ScorePackage.MEASURE: return createMeasure();
-			case ScorePackage.NOTE: return createNote();
-			case ScorePackage.PITCH: return createPitch();
-			case ScorePackage.KEY: return createKey();
-			case ScorePackage.TIME: return createTime();
-			case ScorePackage.CLEF: return createClef();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
+        switch (eClass.getClassifierID()) {
+            case ScorePackage.SCORE: return createScore();
+            case ScorePackage.STAFF: return createStaff();
+            case ScorePackage.PART: return createPart();
+            case ScorePackage.STAFF_GROUP: return createStaffGroup();
+            case ScorePackage.PART_LIST: return createPartList();
+            case ScorePackage.MEASURE: return createMeasure();
+            case ScorePackage.NOTE: return createNote();
+            case ScorePackage.PITCH: return createPitch();
+            case ScorePackage.KEY: return createKey();
+            case ScorePackage.TIME: return createTime();
+            case ScorePackage.CLEF: return createClef();
+            default:
+                throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+        }
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case ScorePackage.STEP:
-				return createStepFromString(eDataType, initialValue);
-			case ScorePackage.NOTE_TYPE:
-				return createNoteTypeFromString(eDataType, initialValue);
-			case ScorePackage.ACCIDENTAL_TYPE:
-				return createAccidentalTypeFromString(eDataType, initialValue);
-			case ScorePackage.TIME_SYMBOL:
-				return createTimeSymbolFromString(eDataType, initialValue);
-			case ScorePackage.CLEF_SIGN:
-				return createClefSignFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
+        switch (eDataType.getClassifierID()) {
+            case ScorePackage.STEP:
+                return createStepFromString(eDataType, initialValue);
+            case ScorePackage.NOTE_TYPE:
+                return createNoteTypeFromString(eDataType, initialValue);
+            case ScorePackage.ACCIDENTAL_TYPE:
+                return createAccidentalTypeFromString(eDataType, initialValue);
+            case ScorePackage.TIME_SYMBOL:
+                return createTimeSymbolFromString(eDataType, initialValue);
+            case ScorePackage.CLEF_SIGN:
+                return createClefSignFromString(eDataType, initialValue);
+            default:
+                throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+        }
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case ScorePackage.STEP:
-				return convertStepToString(eDataType, instanceValue);
-			case ScorePackage.NOTE_TYPE:
-				return convertNoteTypeToString(eDataType, instanceValue);
-			case ScorePackage.ACCIDENTAL_TYPE:
-				return convertAccidentalTypeToString(eDataType, instanceValue);
-			case ScorePackage.TIME_SYMBOL:
-				return convertTimeSymbolToString(eDataType, instanceValue);
-			case ScorePackage.CLEF_SIGN:
-				return convertClefSignToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
+        switch (eDataType.getClassifierID()) {
+            case ScorePackage.STEP:
+                return convertStepToString(eDataType, instanceValue);
+            case ScorePackage.NOTE_TYPE:
+                return convertNoteTypeToString(eDataType, instanceValue);
+            case ScorePackage.ACCIDENTAL_TYPE:
+                return convertAccidentalTypeToString(eDataType, instanceValue);
+            case ScorePackage.TIME_SYMBOL:
+                return convertTimeSymbolToString(eDataType, instanceValue);
+            case ScorePackage.CLEF_SIGN:
+                return convertClefSignToString(eDataType, instanceValue);
+            default:
+                throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+        }
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Score createScore() {
-		ScoreImpl score = new ScoreImpl();
-		return score;
-	}
+        ScoreImpl score = new ScoreImpl();
+        return score;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Staff createStaff() {
-		StaffImpl staff = new StaffImpl();
-		return staff;
-	}
+        StaffImpl staff = new StaffImpl();
+        return staff;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Part createPart() {
-		PartImpl part = new PartImpl();
-		return part;
-	}
+        PartImpl part = new PartImpl();
+        return part;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public StaffGroup createStaffGroup() {
-		StaffGroupImpl staffGroup = new StaffGroupImpl();
-		return staffGroup;
-	}
+        StaffGroupImpl staffGroup = new StaffGroupImpl();
+        return staffGroup;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public PartList createPartList() {
-		PartListImpl partList = new PartListImpl();
-		return partList;
-	}
+        PartListImpl partList = new PartListImpl();
+        return partList;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Measure createMeasure() {
-		MeasureImpl measure = new MeasureImpl();
-		return measure;
-	}
+        MeasureImpl measure = new MeasureImpl();
+        return measure;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Note createNote() {
-		NoteImpl note = new NoteImpl();
-		return note;
-	}
+        NoteImpl note = new NoteImpl();
+        return note;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Pitch createPitch() {
-		PitchImpl pitch = new PitchImpl();
-		return pitch;
-	}
+        PitchImpl pitch = new PitchImpl();
+        return pitch;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Key createKey() {
-		KeyImpl key = new KeyImpl();
-		return key;
-	}
+        KeyImpl key = new KeyImpl();
+        return key;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Time createTime() {
-		TimeImpl time = new TimeImpl();
-		return time;
-	}
+        TimeImpl time = new TimeImpl();
+        return time;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Clef createClef() {
-		ClefImpl clef = new ClefImpl();
-		return clef;
-	}
+        ClefImpl clef = new ClefImpl();
+        return clef;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Step createStepFromString(EDataType eDataType, String initialValue) {
-		Step result = Step.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
+        Step result = Step.get(initialValue);
+        if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public String convertStepToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+        return instanceValue == null ? null : instanceValue.toString();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public NoteType createNoteTypeFromString(EDataType eDataType, String initialValue) {
-		NoteType result = NoteType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
+        NoteType result = NoteType.get(initialValue);
+        if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public String convertNoteTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+        return instanceValue == null ? null : instanceValue.toString();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public AccidentalType createAccidentalTypeFromString(EDataType eDataType, String initialValue) {
-		AccidentalType result = AccidentalType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
+        AccidentalType result = AccidentalType.get(initialValue);
+        if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public String convertAccidentalTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+        return instanceValue == null ? null : instanceValue.toString();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public TimeSymbol createTimeSymbolFromString(EDataType eDataType, String initialValue) {
-		TimeSymbol result = TimeSymbol.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
+        TimeSymbol result = TimeSymbol.get(initialValue);
+        if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public String convertTimeSymbolToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+        return instanceValue == null ? null : instanceValue.toString();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public ClefSign createClefSignFromString(EDataType eDataType, String initialValue) {
-		ClefSign result = ClefSign.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
+        ClefSign result = ClefSign.get(initialValue);
+        if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public String convertClefSignToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
+        return instanceValue == null ? null : instanceValue.toString();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public ScorePackage getScorePackage() {
-		return (ScorePackage)getEPackage();
-	}
+        return (ScorePackage)getEPackage();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @deprecated
-	 * @generated
-	 */
+     * @deprecated
+     * @generated
+     */
 	@Deprecated
 	public static ScorePackage getPackage() {
-		return ScorePackage.eINSTANCE;
-	}
+        return ScorePackage.eINSTANCE;
+    }
 
 } //ScoreFactoryImpl

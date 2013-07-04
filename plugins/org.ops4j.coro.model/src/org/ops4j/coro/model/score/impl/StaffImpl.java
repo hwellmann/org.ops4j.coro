@@ -20,22 +20,22 @@ import org.ops4j.coro.model.score.Staff;
  */
 public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected StaffImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return ScorePackage.Literals.STAFF;
-	}
+        return ScorePackage.Literals.STAFF;
+    }
 
 } //StaffImpl

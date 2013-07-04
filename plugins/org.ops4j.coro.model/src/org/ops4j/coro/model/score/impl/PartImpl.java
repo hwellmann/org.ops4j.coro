@@ -38,204 +38,204 @@ import org.ops4j.coro.model.score.ScorePackage;
  */
 public class PartImpl extends MinimalEObjectImpl.Container implements Part {
 	/**
-	 * The cached value of the '{@link #getMeasures() <em>Measures</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getMeasures() <em>Measures</em>}' containment reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMeasures()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getMeasures()
+     * @generated
+     * @ordered
+     */
 	protected EList<Measure> measures;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected PartImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return ScorePackage.Literals.PART;
-	}
+        return ScorePackage.Literals.PART;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Measure> getMeasures() {
-		if (measures == null) {
-			measures = new EObjectContainmentWithInverseEList<Measure>(Measure.class, this, ScorePackage.PART__MEASURES, ScorePackage.MEASURE__PART);
-		}
-		return measures;
-	}
+        if (measures == null) {
+            measures = new EObjectContainmentWithInverseEList<Measure>(Measure.class, this, ScorePackage.PART__MEASURES, ScorePackage.MEASURE__PART);
+        }
+        return measures;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Score getScore() {
-		if (eContainerFeatureID() != ScorePackage.PART__SCORE) return null;
-		return (Score)eInternalContainer();
-	}
+        if (eContainerFeatureID() != ScorePackage.PART__SCORE) return null;
+        return (Score)eInternalContainer();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public NotificationChain basicSetScore(Score newScore, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newScore, ScorePackage.PART__SCORE, msgs);
-		return msgs;
-	}
+        msgs = eBasicSetContainer((InternalEObject)newScore, ScorePackage.PART__SCORE, msgs);
+        return msgs;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setScore(Score newScore) {
-		if (newScore != eInternalContainer() || (eContainerFeatureID() != ScorePackage.PART__SCORE && newScore != null)) {
-			if (EcoreUtil.isAncestor(this, newScore))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newScore != null)
-				msgs = ((InternalEObject)newScore).eInverseAdd(this, ScorePackage.SCORE__PARTS, Score.class, msgs);
-			msgs = basicSetScore(newScore, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.PART__SCORE, newScore, newScore));
-	}
+        if (newScore != eInternalContainer() || (eContainerFeatureID() != ScorePackage.PART__SCORE && newScore != null)) {
+            if (EcoreUtil.isAncestor(this, newScore))
+                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+            NotificationChain msgs = null;
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            if (newScore != null)
+                msgs = ((InternalEObject)newScore).eInverseAdd(this, ScorePackage.SCORE__PARTS, Score.class, msgs);
+            msgs = basicSetScore(newScore, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.PART__SCORE, newScore, newScore));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ScorePackage.PART__MEASURES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getMeasures()).basicAdd(otherEnd, msgs);
-			case ScorePackage.PART__SCORE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetScore((Score)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
+        switch (featureID) {
+            case ScorePackage.PART__MEASURES:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getMeasures()).basicAdd(otherEnd, msgs);
+            case ScorePackage.PART__SCORE:
+                if (eInternalContainer() != null)
+                    msgs = eBasicRemoveFromContainer(msgs);
+                return basicSetScore((Score)otherEnd, msgs);
+        }
+        return super.eInverseAdd(otherEnd, featureID, msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ScorePackage.PART__MEASURES:
-				return ((InternalEList<?>)getMeasures()).basicRemove(otherEnd, msgs);
-			case ScorePackage.PART__SCORE:
-				return basicSetScore(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+        switch (featureID) {
+            case ScorePackage.PART__MEASURES:
+                return ((InternalEList<?>)getMeasures()).basicRemove(otherEnd, msgs);
+            case ScorePackage.PART__SCORE:
+                return basicSetScore(null, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case ScorePackage.PART__SCORE:
-				return eInternalContainer().eInverseRemove(this, ScorePackage.SCORE__PARTS, Score.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
+        switch (eContainerFeatureID()) {
+            case ScorePackage.PART__SCORE:
+                return eInternalContainer().eInverseRemove(this, ScorePackage.SCORE__PARTS, Score.class, msgs);
+        }
+        return super.eBasicRemoveFromContainerFeature(msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ScorePackage.PART__MEASURES:
-				return getMeasures();
-			case ScorePackage.PART__SCORE:
-				return getScore();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case ScorePackage.PART__MEASURES:
+                return getMeasures();
+            case ScorePackage.PART__SCORE:
+                return getScore();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ScorePackage.PART__MEASURES:
-				getMeasures().clear();
-				getMeasures().addAll((Collection<? extends Measure>)newValue);
-				return;
-			case ScorePackage.PART__SCORE:
-				setScore((Score)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case ScorePackage.PART__MEASURES:
+                getMeasures().clear();
+                getMeasures().addAll((Collection<? extends Measure>)newValue);
+                return;
+            case ScorePackage.PART__SCORE:
+                setScore((Score)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ScorePackage.PART__MEASURES:
-				getMeasures().clear();
-				return;
-			case ScorePackage.PART__SCORE:
-				setScore((Score)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case ScorePackage.PART__MEASURES:
+                getMeasures().clear();
+                return;
+            case ScorePackage.PART__SCORE:
+                setScore((Score)null);
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ScorePackage.PART__MEASURES:
-				return measures != null && !measures.isEmpty();
-			case ScorePackage.PART__SCORE:
-				return getScore() != null;
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case ScorePackage.PART__MEASURES:
+                return measures != null && !measures.isEmpty();
+            case ScorePackage.PART__SCORE:
+                return getScore() != null;
+        }
+        return super.eIsSet(featureID);
+    }
 
 } //PartImpl

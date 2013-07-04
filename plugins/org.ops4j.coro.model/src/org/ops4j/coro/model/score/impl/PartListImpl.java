@@ -31,104 +31,104 @@ import org.ops4j.coro.model.score.ScorePackage;
  */
 public class PartListImpl extends MinimalEObjectImpl.Container implements PartList {
 	/**
-	 * The cached value of the '{@link #getParts() <em>Parts</em>}' reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getParts() <em>Parts</em>}' reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getParts()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getParts()
+     * @generated
+     * @ordered
+     */
 	protected EList<Part> parts;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected PartListImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return ScorePackage.Literals.PART_LIST;
-	}
+        return ScorePackage.Literals.PART_LIST;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Part> getParts() {
-		if (parts == null) {
-			parts = new EObjectResolvingEList<Part>(Part.class, this, ScorePackage.PART_LIST__PARTS);
-		}
-		return parts;
-	}
+        if (parts == null) {
+            parts = new EObjectResolvingEList<Part>(Part.class, this, ScorePackage.PART_LIST__PARTS);
+        }
+        return parts;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ScorePackage.PART_LIST__PARTS:
-				return getParts();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case ScorePackage.PART_LIST__PARTS:
+                return getParts();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ScorePackage.PART_LIST__PARTS:
-				getParts().clear();
-				getParts().addAll((Collection<? extends Part>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case ScorePackage.PART_LIST__PARTS:
+                getParts().clear();
+                getParts().addAll((Collection<? extends Part>)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ScorePackage.PART_LIST__PARTS:
-				getParts().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case ScorePackage.PART_LIST__PARTS:
+                getParts().clear();
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ScorePackage.PART_LIST__PARTS:
-				return parts != null && !parts.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case ScorePackage.PART_LIST__PARTS:
+                return parts != null && !parts.isEmpty();
+        }
+        return super.eIsSet(featureID);
+    }
 
 } //PartListImpl

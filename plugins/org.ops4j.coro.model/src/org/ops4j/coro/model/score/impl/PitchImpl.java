@@ -30,243 +30,243 @@ import org.ops4j.coro.model.score.Step;
  */
 public class PitchImpl extends MinimalEObjectImpl.Container implements Pitch {
 	/**
-	 * The default value of the '{@link #getOctave() <em>Octave</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getOctave() <em>Octave</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOctave()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getOctave()
+     * @generated
+     * @ordered
+     */
 	protected static final int OCTAVE_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getOctave() <em>Octave</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getOctave() <em>Octave</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOctave()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getOctave()
+     * @generated
+     * @ordered
+     */
 	protected int octave = OCTAVE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getAlteration() <em>Alteration</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getAlteration() <em>Alteration</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAlteration()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getAlteration()
+     * @generated
+     * @ordered
+     */
 	protected static final float ALTERATION_EDEFAULT = 0.0F;
 
 	/**
-	 * The cached value of the '{@link #getAlteration() <em>Alteration</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getAlteration() <em>Alteration</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAlteration()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getAlteration()
+     * @generated
+     * @ordered
+     */
 	protected float alteration = ALTERATION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStep() <em>Step</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getStep() <em>Step</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStep()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getStep()
+     * @generated
+     * @ordered
+     */
 	protected static final Step STEP_EDEFAULT = Step.C;
 
 	/**
-	 * The cached value of the '{@link #getStep() <em>Step</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getStep() <em>Step</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStep()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getStep()
+     * @generated
+     * @ordered
+     */
 	protected Step step = STEP_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected PitchImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return ScorePackage.Literals.PITCH;
-	}
+        return ScorePackage.Literals.PITCH;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public int getOctave() {
-		return octave;
-	}
+        return octave;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setOctave(int newOctave) {
-		int oldOctave = octave;
-		octave = newOctave;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.PITCH__OCTAVE, oldOctave, octave));
-	}
+        int oldOctave = octave;
+        octave = newOctave;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.PITCH__OCTAVE, oldOctave, octave));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public float getAlteration() {
-		return alteration;
-	}
+        return alteration;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setAlteration(float newAlteration) {
-		float oldAlteration = alteration;
-		alteration = newAlteration;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.PITCH__ALTERATION, oldAlteration, alteration));
-	}
+        float oldAlteration = alteration;
+        alteration = newAlteration;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.PITCH__ALTERATION, oldAlteration, alteration));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Step getStep() {
-		return step;
-	}
+        return step;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setStep(Step newStep) {
-		Step oldStep = step;
-		step = newStep == null ? STEP_EDEFAULT : newStep;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.PITCH__STEP, oldStep, step));
-	}
+        Step oldStep = step;
+        step = newStep == null ? STEP_EDEFAULT : newStep;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.PITCH__STEP, oldStep, step));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ScorePackage.PITCH__OCTAVE:
-				return getOctave();
-			case ScorePackage.PITCH__ALTERATION:
-				return getAlteration();
-			case ScorePackage.PITCH__STEP:
-				return getStep();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case ScorePackage.PITCH__OCTAVE:
+                return getOctave();
+            case ScorePackage.PITCH__ALTERATION:
+                return getAlteration();
+            case ScorePackage.PITCH__STEP:
+                return getStep();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ScorePackage.PITCH__OCTAVE:
-				setOctave((Integer)newValue);
-				return;
-			case ScorePackage.PITCH__ALTERATION:
-				setAlteration((Float)newValue);
-				return;
-			case ScorePackage.PITCH__STEP:
-				setStep((Step)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case ScorePackage.PITCH__OCTAVE:
+                setOctave((Integer)newValue);
+                return;
+            case ScorePackage.PITCH__ALTERATION:
+                setAlteration((Float)newValue);
+                return;
+            case ScorePackage.PITCH__STEP:
+                setStep((Step)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ScorePackage.PITCH__OCTAVE:
-				setOctave(OCTAVE_EDEFAULT);
-				return;
-			case ScorePackage.PITCH__ALTERATION:
-				setAlteration(ALTERATION_EDEFAULT);
-				return;
-			case ScorePackage.PITCH__STEP:
-				setStep(STEP_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case ScorePackage.PITCH__OCTAVE:
+                setOctave(OCTAVE_EDEFAULT);
+                return;
+            case ScorePackage.PITCH__ALTERATION:
+                setAlteration(ALTERATION_EDEFAULT);
+                return;
+            case ScorePackage.PITCH__STEP:
+                setStep(STEP_EDEFAULT);
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ScorePackage.PITCH__OCTAVE:
-				return octave != OCTAVE_EDEFAULT;
-			case ScorePackage.PITCH__ALTERATION:
-				return alteration != ALTERATION_EDEFAULT;
-			case ScorePackage.PITCH__STEP:
-				return step != STEP_EDEFAULT;
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case ScorePackage.PITCH__OCTAVE:
+                return octave != OCTAVE_EDEFAULT;
+            case ScorePackage.PITCH__ALTERATION:
+                return alteration != ALTERATION_EDEFAULT;
+            case ScorePackage.PITCH__STEP:
+                return step != STEP_EDEFAULT;
+        }
+        return super.eIsSet(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+        if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (octave: ");
-		result.append(octave);
-		result.append(", alteration: ");
-		result.append(alteration);
-		result.append(", step: ");
-		result.append(step);
-		result.append(')');
-		return result.toString();
-	}
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (octave: ");
+        result.append(octave);
+        result.append(", alteration: ");
+        result.append(alteration);
+        result.append(", step: ");
+        result.append(step);
+        result.append(')');
+        return result.toString();
+    }
 
 } //PitchImpl

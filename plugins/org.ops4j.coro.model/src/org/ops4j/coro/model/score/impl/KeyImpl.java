@@ -28,190 +28,190 @@ import org.ops4j.coro.model.score.ScorePackage;
  */
 public class KeyImpl extends MinimalEObjectImpl.Container implements Key {
 	/**
-	 * The default value of the '{@link #getFifths() <em>Fifths</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getFifths() <em>Fifths</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFifths()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getFifths()
+     * @generated
+     * @ordered
+     */
 	protected static final int FIFTHS_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getFifths() <em>Fifths</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getFifths() <em>Fifths</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFifths()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getFifths()
+     * @generated
+     * @ordered
+     */
 	protected int fifths = FIFTHS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMode()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getMode()
+     * @generated
+     * @ordered
+     */
 	protected static final String MODE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getMode() <em>Mode</em>}' attribute.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getMode() <em>Mode</em>}' attribute.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMode()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getMode()
+     * @generated
+     * @ordered
+     */
 	protected String mode = MODE_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected KeyImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return ScorePackage.Literals.KEY;
-	}
+        return ScorePackage.Literals.KEY;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public int getFifths() {
-		return fifths;
-	}
+        return fifths;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setFifths(int newFifths) {
-		int oldFifths = fifths;
-		fifths = newFifths;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.KEY__FIFTHS, oldFifths, fifths));
-	}
+        int oldFifths = fifths;
+        fifths = newFifths;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.KEY__FIFTHS, oldFifths, fifths));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public String getMode() {
-		return mode;
-	}
+        return mode;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setMode(String newMode) {
-		String oldMode = mode;
-		mode = newMode;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.KEY__MODE, oldMode, mode));
-	}
+        String oldMode = mode;
+        mode = newMode;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.KEY__MODE, oldMode, mode));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ScorePackage.KEY__FIFTHS:
-				return getFifths();
-			case ScorePackage.KEY__MODE:
-				return getMode();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case ScorePackage.KEY__FIFTHS:
+                return getFifths();
+            case ScorePackage.KEY__MODE:
+                return getMode();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ScorePackage.KEY__FIFTHS:
-				setFifths((Integer)newValue);
-				return;
-			case ScorePackage.KEY__MODE:
-				setMode((String)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case ScorePackage.KEY__FIFTHS:
+                setFifths((Integer)newValue);
+                return;
+            case ScorePackage.KEY__MODE:
+                setMode((String)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ScorePackage.KEY__FIFTHS:
-				setFifths(FIFTHS_EDEFAULT);
-				return;
-			case ScorePackage.KEY__MODE:
-				setMode(MODE_EDEFAULT);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case ScorePackage.KEY__FIFTHS:
+                setFifths(FIFTHS_EDEFAULT);
+                return;
+            case ScorePackage.KEY__MODE:
+                setMode(MODE_EDEFAULT);
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ScorePackage.KEY__FIFTHS:
-				return fifths != FIFTHS_EDEFAULT;
-			case ScorePackage.KEY__MODE:
-				return MODE_EDEFAULT == null ? mode != null : !MODE_EDEFAULT.equals(mode);
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case ScorePackage.KEY__FIFTHS:
+                return fifths != FIFTHS_EDEFAULT;
+            case ScorePackage.KEY__MODE:
+                return MODE_EDEFAULT == null ? mode != null : !MODE_EDEFAULT.equals(mode);
+        }
+        return super.eIsSet(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+        if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (fifths: ");
-		result.append(fifths);
-		result.append(", mode: ");
-		result.append(mode);
-		result.append(')');
-		return result.toString();
-	}
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (fifths: ");
+        result.append(fifths);
+        result.append(", mode: ");
+        result.append(mode);
+        result.append(')');
+        return result.toString();
+    }
 
 } //KeyImpl

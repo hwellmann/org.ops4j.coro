@@ -20,22 +20,22 @@ import org.ops4j.coro.model.score.StaffGroup;
  */
 public class StaffGroupImpl extends MinimalEObjectImpl.Container implements StaffGroup {
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected StaffGroupImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return ScorePackage.Literals.STAFF_GROUP;
-	}
+        return ScorePackage.Literals.STAFF_GROUP;
+    }
 
 } //StaffGroupImpl

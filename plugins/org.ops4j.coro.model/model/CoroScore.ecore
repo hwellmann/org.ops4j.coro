@@ -27,6 +27,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="clef" eType="#//Clef" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="part" lowerBound="1" eType="#//Part"
         eOpposite="#//Part/measures"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="marker" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Note">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pitch" lowerBound="1" eType="#//Pitch"/>

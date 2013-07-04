@@ -39,6 +39,7 @@ import org.ops4j.coro.model.score.Time;
  *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getTime <em>Time</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getClef <em>Clef</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getPart <em>Part</em>}</li>
+ *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getMarker <em>Marker</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,399 +47,466 @@ import org.ops4j.coro.model.score.Time;
  */
 public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure {
 	/**
-	 * The cached value of the '{@link #getNotes() <em>Notes</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getNotes() <em>Notes</em>}' containment reference list.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNotes()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getNotes()
+     * @generated
+     * @ordered
+     */
 	protected EList<Note> notes;
 
 	/**
-	 * The cached value of the '{@link #getKey() <em>Key</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getKey() <em>Key</em>}' containment reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getKey()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getKey()
+     * @generated
+     * @ordered
+     */
 	protected Key key;
 
 	/**
-	 * The cached value of the '{@link #getTime() <em>Time</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getTime() <em>Time</em>}' containment reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTime()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getTime()
+     * @generated
+     * @ordered
+     */
 	protected Time time;
 
 	/**
-	 * The cached value of the '{@link #getClef() <em>Clef</em>}' containment reference.
-	 * <!-- begin-user-doc -->
+     * The cached value of the '{@link #getClef() <em>Clef</em>}' containment reference.
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getClef()
-	 * @generated
-	 * @ordered
-	 */
+     * @see #getClef()
+     * @generated
+     * @ordered
+     */
 	protected Clef clef;
 
 	/**
-	 * <!-- begin-user-doc -->
+     * The default value of the '{@link #getMarker() <em>Marker</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getMarker()
+     * @generated
+     * @ordered
+     */
+    protected static final String MARKER_EDEFAULT = null;
+
+    /**
+     * The cached value of the '{@link #getMarker() <em>Marker</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getMarker()
+     * @generated
+     * @ordered
+     */
+    protected String marker = MARKER_EDEFAULT;
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	protected MeasureImpl() {
-		super();
-	}
+        super();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	protected EClass eStaticClass() {
-		return ScorePackage.Literals.MEASURE;
-	}
+        return ScorePackage.Literals.MEASURE;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public EList<Note> getNotes() {
-		if (notes == null) {
-			notes = new EObjectContainmentWithInverseEList<Note>(Note.class, this, ScorePackage.MEASURE__NOTES, ScorePackage.NOTE__MEASURE);
-		}
-		return notes;
-	}
+        if (notes == null) {
+            notes = new EObjectContainmentWithInverseEList<Note>(Note.class, this, ScorePackage.MEASURE__NOTES, ScorePackage.NOTE__MEASURE);
+        }
+        return notes;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Key getKey() {
-		return key;
-	}
+        return key;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public NotificationChain basicSetKey(Key newKey, NotificationChain msgs) {
-		Key oldKey = key;
-		key = newKey;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__KEY, oldKey, newKey);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+        Key oldKey = key;
+        key = newKey;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__KEY, oldKey, newKey);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setKey(Key newKey) {
-		if (newKey != key) {
-			NotificationChain msgs = null;
-			if (key != null)
-				msgs = ((InternalEObject)key).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScorePackage.MEASURE__KEY, null, msgs);
-			if (newKey != null)
-				msgs = ((InternalEObject)newKey).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScorePackage.MEASURE__KEY, null, msgs);
-			msgs = basicSetKey(newKey, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__KEY, newKey, newKey));
-	}
+        if (newKey != key) {
+            NotificationChain msgs = null;
+            if (key != null)
+                msgs = ((InternalEObject)key).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScorePackage.MEASURE__KEY, null, msgs);
+            if (newKey != null)
+                msgs = ((InternalEObject)newKey).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScorePackage.MEASURE__KEY, null, msgs);
+            msgs = basicSetKey(newKey, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__KEY, newKey, newKey));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Time getTime() {
-		return time;
-	}
+        return time;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public NotificationChain basicSetTime(Time newTime, NotificationChain msgs) {
-		Time oldTime = time;
-		time = newTime;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__TIME, oldTime, newTime);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+        Time oldTime = time;
+        time = newTime;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__TIME, oldTime, newTime);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setTime(Time newTime) {
-		if (newTime != time) {
-			NotificationChain msgs = null;
-			if (time != null)
-				msgs = ((InternalEObject)time).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScorePackage.MEASURE__TIME, null, msgs);
-			if (newTime != null)
-				msgs = ((InternalEObject)newTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScorePackage.MEASURE__TIME, null, msgs);
-			msgs = basicSetTime(newTime, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__TIME, newTime, newTime));
-	}
+        if (newTime != time) {
+            NotificationChain msgs = null;
+            if (time != null)
+                msgs = ((InternalEObject)time).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScorePackage.MEASURE__TIME, null, msgs);
+            if (newTime != null)
+                msgs = ((InternalEObject)newTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScorePackage.MEASURE__TIME, null, msgs);
+            msgs = basicSetTime(newTime, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__TIME, newTime, newTime));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Clef getClef() {
-		return clef;
-	}
+        return clef;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public NotificationChain basicSetClef(Clef newClef, NotificationChain msgs) {
-		Clef oldClef = clef;
-		clef = newClef;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__CLEF, oldClef, newClef);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
+        Clef oldClef = clef;
+        clef = newClef;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__CLEF, oldClef, newClef);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setClef(Clef newClef) {
-		if (newClef != clef) {
-			NotificationChain msgs = null;
-			if (clef != null)
-				msgs = ((InternalEObject)clef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScorePackage.MEASURE__CLEF, null, msgs);
-			if (newClef != null)
-				msgs = ((InternalEObject)newClef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScorePackage.MEASURE__CLEF, null, msgs);
-			msgs = basicSetClef(newClef, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__CLEF, newClef, newClef));
-	}
+        if (newClef != clef) {
+            NotificationChain msgs = null;
+            if (clef != null)
+                msgs = ((InternalEObject)clef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScorePackage.MEASURE__CLEF, null, msgs);
+            if (newClef != null)
+                msgs = ((InternalEObject)newClef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScorePackage.MEASURE__CLEF, null, msgs);
+            msgs = basicSetClef(newClef, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__CLEF, newClef, newClef));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public Part getPart() {
-		if (eContainerFeatureID() != ScorePackage.MEASURE__PART) return null;
-		return (Part)eInternalContainer();
-	}
+        if (eContainerFeatureID() != ScorePackage.MEASURE__PART) return null;
+        return (Part)eInternalContainer();
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public NotificationChain basicSetPart(Part newPart, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newPart, ScorePackage.MEASURE__PART, msgs);
-		return msgs;
-	}
+        msgs = eBasicSetContainer((InternalEObject)newPart, ScorePackage.MEASURE__PART, msgs);
+        return msgs;
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	public void setPart(Part newPart) {
-		if (newPart != eInternalContainer() || (eContainerFeatureID() != ScorePackage.MEASURE__PART && newPart != null)) {
-			if (EcoreUtil.isAncestor(this, newPart))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newPart != null)
-				msgs = ((InternalEObject)newPart).eInverseAdd(this, ScorePackage.PART__MEASURES, Part.class, msgs);
-			msgs = basicSetPart(newPart, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__PART, newPart, newPart));
-	}
+        if (newPart != eInternalContainer() || (eContainerFeatureID() != ScorePackage.MEASURE__PART && newPart != null)) {
+            if (EcoreUtil.isAncestor(this, newPart))
+                throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+            NotificationChain msgs = null;
+            if (eInternalContainer() != null)
+                msgs = eBasicRemoveFromContainer(msgs);
+            if (newPart != null)
+                msgs = ((InternalEObject)newPart).eInverseAdd(this, ScorePackage.PART__MEASURES, Part.class, msgs);
+            msgs = basicSetPart(newPart, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__PART, newPart, newPart));
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setMarker(String newMarker) {
+        String oldMarker = marker;
+        marker = newMarker;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__MARKER, oldMarker, marker));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ScorePackage.MEASURE__NOTES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getNotes()).basicAdd(otherEnd, msgs);
-			case ScorePackage.MEASURE__PART:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetPart((Part)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
+        switch (featureID) {
+            case ScorePackage.MEASURE__NOTES:
+                return ((InternalEList<InternalEObject>)(InternalEList<?>)getNotes()).basicAdd(otherEnd, msgs);
+            case ScorePackage.MEASURE__PART:
+                if (eInternalContainer() != null)
+                    msgs = eBasicRemoveFromContainer(msgs);
+                return basicSetPart((Part)otherEnd, msgs);
+        }
+        return super.eInverseAdd(otherEnd, featureID, msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ScorePackage.MEASURE__NOTES:
-				return ((InternalEList<?>)getNotes()).basicRemove(otherEnd, msgs);
-			case ScorePackage.MEASURE__KEY:
-				return basicSetKey(null, msgs);
-			case ScorePackage.MEASURE__TIME:
-				return basicSetTime(null, msgs);
-			case ScorePackage.MEASURE__CLEF:
-				return basicSetClef(null, msgs);
-			case ScorePackage.MEASURE__PART:
-				return basicSetPart(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+        switch (featureID) {
+            case ScorePackage.MEASURE__NOTES:
+                return ((InternalEList<?>)getNotes()).basicRemove(otherEnd, msgs);
+            case ScorePackage.MEASURE__KEY:
+                return basicSetKey(null, msgs);
+            case ScorePackage.MEASURE__TIME:
+                return basicSetTime(null, msgs);
+            case ScorePackage.MEASURE__CLEF:
+                return basicSetClef(null, msgs);
+            case ScorePackage.MEASURE__PART:
+                return basicSetPart(null, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case ScorePackage.MEASURE__PART:
-				return eInternalContainer().eInverseRemove(this, ScorePackage.PART__MEASURES, Part.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
+        switch (eContainerFeatureID()) {
+            case ScorePackage.MEASURE__PART:
+                return eInternalContainer().eInverseRemove(this, ScorePackage.PART__MEASURES, Part.class, msgs);
+        }
+        return super.eBasicRemoveFromContainerFeature(msgs);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ScorePackage.MEASURE__NOTES:
-				return getNotes();
-			case ScorePackage.MEASURE__KEY:
-				return getKey();
-			case ScorePackage.MEASURE__TIME:
-				return getTime();
-			case ScorePackage.MEASURE__CLEF:
-				return getClef();
-			case ScorePackage.MEASURE__PART:
-				return getPart();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+        switch (featureID) {
+            case ScorePackage.MEASURE__NOTES:
+                return getNotes();
+            case ScorePackage.MEASURE__KEY:
+                return getKey();
+            case ScorePackage.MEASURE__TIME:
+                return getTime();
+            case ScorePackage.MEASURE__CLEF:
+                return getClef();
+            case ScorePackage.MEASURE__PART:
+                return getPart();
+            case ScorePackage.MEASURE__MARKER:
+                return getMarker();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ScorePackage.MEASURE__NOTES:
-				getNotes().clear();
-				getNotes().addAll((Collection<? extends Note>)newValue);
-				return;
-			case ScorePackage.MEASURE__KEY:
-				setKey((Key)newValue);
-				return;
-			case ScorePackage.MEASURE__TIME:
-				setTime((Time)newValue);
-				return;
-			case ScorePackage.MEASURE__CLEF:
-				setClef((Clef)newValue);
-				return;
-			case ScorePackage.MEASURE__PART:
-				setPart((Part)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+        switch (featureID) {
+            case ScorePackage.MEASURE__NOTES:
+                getNotes().clear();
+                getNotes().addAll((Collection<? extends Note>)newValue);
+                return;
+            case ScorePackage.MEASURE__KEY:
+                setKey((Key)newValue);
+                return;
+            case ScorePackage.MEASURE__TIME:
+                setTime((Time)newValue);
+                return;
+            case ScorePackage.MEASURE__CLEF:
+                setClef((Clef)newValue);
+                return;
+            case ScorePackage.MEASURE__PART:
+                setPart((Part)newValue);
+                return;
+            case ScorePackage.MEASURE__MARKER:
+                setMarker((String)newValue);
+                return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ScorePackage.MEASURE__NOTES:
-				getNotes().clear();
-				return;
-			case ScorePackage.MEASURE__KEY:
-				setKey((Key)null);
-				return;
-			case ScorePackage.MEASURE__TIME:
-				setTime((Time)null);
-				return;
-			case ScorePackage.MEASURE__CLEF:
-				setClef((Clef)null);
-				return;
-			case ScorePackage.MEASURE__PART:
-				setPart((Part)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+        switch (featureID) {
+            case ScorePackage.MEASURE__NOTES:
+                getNotes().clear();
+                return;
+            case ScorePackage.MEASURE__KEY:
+                setKey((Key)null);
+                return;
+            case ScorePackage.MEASURE__TIME:
+                setTime((Time)null);
+                return;
+            case ScorePackage.MEASURE__CLEF:
+                setClef((Clef)null);
+                return;
+            case ScorePackage.MEASURE__PART:
+                setPart((Part)null);
+                return;
+            case ScorePackage.MEASURE__MARKER:
+                setMarker(MARKER_EDEFAULT);
+                return;
+        }
+        super.eUnset(featureID);
+    }
 
 	/**
-	 * <!-- begin-user-doc -->
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+     * @generated
+     */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ScorePackage.MEASURE__NOTES:
-				return notes != null && !notes.isEmpty();
-			case ScorePackage.MEASURE__KEY:
-				return key != null;
-			case ScorePackage.MEASURE__TIME:
-				return time != null;
-			case ScorePackage.MEASURE__CLEF:
-				return clef != null;
-			case ScorePackage.MEASURE__PART:
-				return getPart() != null;
-		}
-		return super.eIsSet(featureID);
-	}
+        switch (featureID) {
+            case ScorePackage.MEASURE__NOTES:
+                return notes != null && !notes.isEmpty();
+            case ScorePackage.MEASURE__KEY:
+                return key != null;
+            case ScorePackage.MEASURE__TIME:
+                return time != null;
+            case ScorePackage.MEASURE__CLEF:
+                return clef != null;
+            case ScorePackage.MEASURE__PART:
+                return getPart() != null;
+            case ScorePackage.MEASURE__MARKER:
+                return MARKER_EDEFAULT == null ? marker != null : !MARKER_EDEFAULT.equals(marker);
+        }
+        return super.eIsSet(featureID);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public String toString() {
+        if (eIsProxy()) return super.toString();
+
+        StringBuffer result = new StringBuffer(super.toString());
+        result.append(" (marker: ");
+        result.append(marker);
+        result.append(')');
+        return result.toString();
+    }
 
 } //MeasureImpl
