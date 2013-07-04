@@ -35,7 +35,8 @@ public class MeasureCreateFeature extends AbstractCreateFeature {
         Part part = (Part) containerObjects.get(0);
         List<Measure> measures = part.getMeasures();
         Measure measure = ScoreFactory.eINSTANCE.createMeasure();
-        measure.setMarker("M1");
+        int number = measures.size() + 1;
+        measure.setMarker("M" + number);
         measures.add(measure);
 
         // add the corresponding graphical representation
