@@ -26,102 +26,117 @@ import org.eclipse.graphiti.util.IColorConstant;
 import org.eclipse.graphiti.util.PredefinedColoredAreas;
 
 /**
- * Styles are created here with "plain"-methods, i.e. all values have to be set
- * explicitly.
+ * Styles are created here with "plain"-methods, i.e. all values have to be set explicitly.
  * 
  * See chapters "Using Styles" and "Color Schemas" in tutorial for deatails.
  */
 public class StyleFactory {
 
-	private static final IColorConstant E_CLASS_TEXT_FOREGROUND = new ColorConstant(0, 0, 0);
-	private static final IColorConstant E_CLASS_FOREGROUND = new ColorConstant(98, 131, 167);
+    private static final IColorConstant E_CLASS_TEXT_FOREGROUND = new ColorConstant(0, 0, 0);
+    private static final IColorConstant E_CLASS_FOREGROUND = new ColorConstant(98, 131, 167);
 
-	// no background color here, we have a gradient instead
-	// see chapter "Color Schemas" in Tutorial
+    // no background color here, we have a gradient instead
+    // see chapter "Color Schemas" in Tutorial
 
-	// private static final IColorConstant E_CLASS_BACKGROUND = new
-	// ColorConstant(187, 218, 247);
+    // private static final IColorConstant E_CLASS_BACKGROUND = new
+    // ColorConstant(187, 218, 247);
 
-	public static Style getStyleForCommonValues(Diagram diagram) {
-		final String styleId = "COMMON-VALUES"; //$NON-NLS-1$
-		IGaService gaService = Graphiti.getGaService();
+    public static Style getStyleForCommonValues(Diagram diagram) {
+        final String styleId = "COMMON-VALUES"; //$NON-NLS-1$
+        IGaService gaService = Graphiti.getGaService();
 
-		// Is style already persisted?
-		Style style = gaService.findStyle(diagram, styleId);
+        // Is style already persisted?
+        Style style = gaService.findStyle(diagram, styleId);
 
-		if (style == null) { // style not found - create new style
-			style = gaService.createPlainStyle(diagram, styleId);
-			setCommonValues(style);
-		}
-		return style;
-	}
+        if (style == null) { // style not found - create new style
+            style = gaService.createPlainStyle(diagram, styleId);
+            setCommonValues(style);
+        }
+        return style;
+    }
 
-	public static Style getStyleForPart(Diagram diagram) {
-		final String styleId = "partStyle"; //$NON-NLS-1$
-		IGaService gaService = Graphiti.getGaService();
+    public static Style getStyleForPart(Diagram diagram) {
+        final String styleId = "partStyle"; //$NON-NLS-1$
+        IGaService gaService = Graphiti.getGaService();
 
-		// this is a child style of the common-values-style
-		Style parentStyle = getStyleForCommonValues(diagram);
-		Style style = gaService.findStyle(parentStyle, styleId);
+        // this is a child style of the common-values-style
+        Style parentStyle = getStyleForCommonValues(diagram);
+        Style style = gaService.findStyle(parentStyle, styleId);
 
-		if (style == null) { // style not found - create new style
-			style = gaService.createPlainStyle(parentStyle, styleId);
-			style.setFilled(true);
-			style.setForeground(gaService.manageColor(diagram, E_CLASS_FOREGROUND));
-			// style.setBackground(gaService.manageColor(diagram,
-			// E_CLASS_BACKGROUND));
+        if (style == null) { // style not found - create new style
+            style = gaService.createPlainStyle(parentStyle, styleId);
+            style.setFilled(true);
+            style.setForeground(gaService.manageColor(diagram, E_CLASS_FOREGROUND));
+            // style.setBackground(gaService.manageColor(diagram,
+            // E_CLASS_BACKGROUND));
 
-			// no background color here, we have a gradient instead
-			// see chapter "Color Schemas" in Tutorial
-			gaService.setRenderingStyle(style, PredefinedColoredAreas.getBlueWhiteGlossAdaptions());
-		}
-		return style;
-	}
+            // no background color here, we have a gradient instead
+            // see chapter "Color Schemas" in Tutorial
+            gaService.setRenderingStyle(style, PredefinedColoredAreas.getBlueWhiteGlossAdaptions());
+        }
+        return style;
+    }
 
-	public static Style getStyleForText(Diagram diagram) {
-		final String styleId = "textStyle"; //$NON-NLS-1$
-		IGaService gaService = Graphiti.getGaService();
+    public static Style getStyleForMusic(Diagram diagram) {
+        final String styleId = "musicStyle"; //$NON-NLS-1$
+        IGaService gaService = Graphiti.getGaService();
 
-		// this is a child style of the common-values-style
-		Style parentStyle = getStyleForCommonValues(diagram);
-		Style style = gaService.findStyle(parentStyle, styleId);
+        // this is a child style of the common-values-style
+        Style parentStyle = getStyleForCommonValues(diagram);
+        Style style = gaService.findStyle(parentStyle, styleId);
 
-		if (style == null) { // style not found - create new style
-			style = gaService.createPlainStyle(parentStyle, styleId);
-			setCommonTextValues(diagram, gaService, style);
-			style.setFont(gaService.manageDefaultFont(diagram, false, true));
-		}
-		return style;
-	}
+        if (style == null) { // style not found - create new style
+            style = gaService.createPlainStyle(parentStyle, styleId);
+            setCommonTextValues(diagram, gaService, style);
+            style.setFont(gaService.manageFont(diagram, "Gonville-20", 20));
+        }
+        return style;
+    }
 
-	public static Style getStyleForTextDecorator(Diagram diagram) {
-		final String styleId = "textDecoratorStyle"; //$NON-NLS-1$
-		IGaService gaService = Graphiti.getGaService();
+    public static Style getStyleForText(Diagram diagram) {
+        final String styleId = "textStyle"; //$NON-NLS-1$
+        IGaService gaService = Graphiti.getGaService();
 
-		// this is a child style of the common-values-style
-		Style parentStyle = getStyleForCommonValues(diagram);
-		Style style = gaService.findStyle(parentStyle, styleId);
+        // this is a child style of the common-values-style
+        Style parentStyle = getStyleForCommonValues(diagram);
+        Style style = gaService.findStyle(parentStyle, styleId);
 
-		if (style == null) { // style not found - create new style
-			style = gaService.createPlainStyle(parentStyle, styleId);
-			setCommonTextValues(diagram, gaService, style);
-			style.setFont(gaService.manageDefaultFont(diagram, true, false));
-		}
-		return style;
-	}
+        if (style == null) { // style not found - create new style
+            style = gaService.createPlainStyle(parentStyle, styleId);
+            setCommonTextValues(diagram, gaService, style);
+            style.setFont(gaService.manageDefaultFont(diagram, false, true));
+        }
+        return style;
+    }
 
-	private static void setCommonTextValues(Diagram diagram, IGaService gaService, Style style) {
-		style.setFilled(false);
-		style.setAngle(0);
-		style.setHorizontalAlignment(Orientation.ALIGNMENT_CENTER);
-		style.setVerticalAlignment(Orientation.ALIGNMENT_CENTER);
-		style.setForeground(gaService.manageColor(diagram, E_CLASS_TEXT_FOREGROUND));
-	}
+    public static Style getStyleForTextDecorator(Diagram diagram) {
+        final String styleId = "textDecoratorStyle"; //$NON-NLS-1$
+        IGaService gaService = Graphiti.getGaService();
 
-	private static void setCommonValues(Style style) {
-		style.setLineStyle(LineStyle.SOLID);
-		style.setLineVisible(true);
-		style.setLineWidth(2);
-		style.setTransparency(0.0);
-	}
+        // this is a child style of the common-values-style
+        Style parentStyle = getStyleForCommonValues(diagram);
+        Style style = gaService.findStyle(parentStyle, styleId);
+
+        if (style == null) { // style not found - create new style
+            style = gaService.createPlainStyle(parentStyle, styleId);
+            setCommonTextValues(diagram, gaService, style);
+            style.setFont(gaService.manageDefaultFont(diagram, true, false));
+        }
+        return style;
+    }
+
+    private static void setCommonTextValues(Diagram diagram, IGaService gaService, Style style) {
+        style.setFilled(false);
+        style.setAngle(0);
+        style.setHorizontalAlignment(Orientation.ALIGNMENT_CENTER);
+        style.setVerticalAlignment(Orientation.ALIGNMENT_CENTER);
+        style.setForeground(gaService.manageColor(diagram, E_CLASS_TEXT_FOREGROUND));
+    }
+
+    private static void setCommonValues(Style style) {
+        style.setLineStyle(LineStyle.SOLID);
+        style.setLineVisible(true);
+        style.setLineWidth(2);
+        style.setTransparency(0.0);
+    }
 }
