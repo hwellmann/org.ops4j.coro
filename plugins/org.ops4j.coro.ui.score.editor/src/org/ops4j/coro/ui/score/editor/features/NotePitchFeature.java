@@ -3,6 +3,7 @@ package org.ops4j.coro.ui.score.editor.features;
 import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.context.ICustomContext;
 import org.eclipse.graphiti.features.custom.AbstractCustomFeature;
+import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 
 
 public class NotePitchFeature extends AbstractCustomFeature {
@@ -16,6 +17,7 @@ public class NotePitchFeature extends AbstractCustomFeature {
     
     @Override
     public boolean canExecute(ICustomContext context) {
+        PictogramElement[] pictogramElements = context.getPictogramElements();
         return true;
     }
 

@@ -30,12 +30,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="marker" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Note">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pitch" lowerBound="1" eType="#//Pitch"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pitch" eType="#//Pitch"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//NoteType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="accidental" eType="#//AccidentalType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="measure" eType="#//Measure"
         eOpposite="#//Measure/notes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rest" eType="#//Rest"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dots" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pitch">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="octave" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -91,5 +93,8 @@
     <eLiterals name="C"/>
     <eLiterals name="F" value="1"/>
     <eLiterals name="G" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rest">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="measure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
 </ecore:EPackage>

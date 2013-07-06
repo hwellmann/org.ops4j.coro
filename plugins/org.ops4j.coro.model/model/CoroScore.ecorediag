@@ -115,6 +115,10 @@
         <element xmi:type="ecore:EAttribute" href="CoroScore.ecore#//Note/accidental"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_YtdWUeF8EeKx-okVn3lEQQ"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_i3IeMOYgEeK8AawZSdjyGA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="CoroScore.ecore#//Note/dots"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_i3IeMeYgEeK8AawZSdjyGA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_uv_yseF3EeKx-okVn3lEQQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_uv_ysuF3EeKx-okVn3lEQQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_uv_ys-F3EeKx-okVn3lEQQ"/>
@@ -391,6 +395,26 @@
     <element xmi:type="ecore:EEnum" href="CoroScore.ecore#//ClefSign"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UmDrAuGbEeKx-okVn3lEQQ" x="655" y="460"/>
   </children>
+  <children xmi:type="notation:Node" xmi:id="_pzA9IOYeEeK8AawZSdjyGA" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_pzEngOYeEeK8AawZSdjyGA" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_pzF1oOYeEeK8AawZSdjyGA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_wmWSIOYeEeK8AawZSdjyGA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="CoroScore.ecore#//Rest/measure"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_wmW5MOYeEeK8AawZSdjyGA"/>
+      </children>
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_pzGcsOYeEeK8AawZSdjyGA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_pzGcseYeEeK8AawZSdjyGA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_pzGcsuYeEeK8AawZSdjyGA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_pzHq0OYeEeK8AawZSdjyGA" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_pzIR4OYeEeK8AawZSdjyGA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_pzIR4eYeEeK8AawZSdjyGA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_pzIR4uYeEeK8AawZSdjyGA"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_pzA9IeYeEeK8AawZSdjyGA" fontColor="4210752" fontName="Droid Sans" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="CoroScore.ecore#//Rest"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pzA9IuYeEeK8AawZSdjyGA" x="810" y="370"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_OxVvoeF1EeKx-okVn3lEQQ"/>
   <element xmi:type="ecore:EPackage" href="CoroScore.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_uH5JgOF6EeKx-okVn3lEQQ" type="3002" source="_uv99gOF3EeKx-okVn3lEQQ" target="_Hh8XcOF6EeKx-okVn3lEQQ">
@@ -541,5 +565,18 @@
     <element xmi:type="ecore:EReference" href="CoroScore.ecore#//Measure/clef"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_m6_a8-GbEeKx-okVn3lEQQ" points="[50, 16, -321, -103]$[372, 110, 1, -9]"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_m7E6gOGbEeKx-okVn3lEQQ" id="(0.2692307692307692,0.11764705882352941)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_01DHMOYeEeK8AawZSdjyGA" type="3002" source="_uv99gOF3EeKx-okVn3lEQQ" target="_pzA9IOYeEeK8AawZSdjyGA">
+    <children xmi:type="notation:Node" xmi:id="_01EVUOYeEeK8AawZSdjyGA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_01EVUeYeEeK8AawZSdjyGA" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_01E8YOYeEeK8AawZSdjyGA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_01E8YeYeEeK8AawZSdjyGA" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_01DHMeYeEeK8AawZSdjyGA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_01DHMuYeEeK8AawZSdjyGA" fontColor="4210752" fontName="Droid Sans" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="CoroScore.ecore#//Note/rest"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_01DHM-YeEeK8AawZSdjyGA" points="[43, 15, -210, -71]$[175, 77, -78, -9]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_01JN0OYeEeK8AawZSdjyGA" id="(0.7414634146341463,0.8235294117647058)"/>
   </edges>
 </notation:Diagram>

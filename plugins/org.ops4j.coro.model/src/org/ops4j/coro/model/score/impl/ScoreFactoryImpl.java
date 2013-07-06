@@ -68,6 +68,7 @@ public class ScoreFactoryImpl extends EFactoryImpl implements ScoreFactory {
             case ScorePackage.KEY: return createKey();
             case ScorePackage.TIME: return createTime();
             case ScorePackage.CLEF: return createClef();
+            case ScorePackage.REST: return createRest();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -230,6 +231,16 @@ public class ScoreFactoryImpl extends EFactoryImpl implements ScoreFactory {
     }
 
 	/**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Rest createRest() {
+        RestImpl rest = new RestImpl();
+        return rest;
+    }
+
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated

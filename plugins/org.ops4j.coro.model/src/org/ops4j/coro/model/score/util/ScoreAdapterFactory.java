@@ -112,6 +112,10 @@ public class ScoreAdapterFactory extends AdapterFactoryImpl {
                 return createClefAdapter();
             }
             @Override
+            public Adapter caseRest(Rest object) {
+                return createRestAdapter();
+            }
+            @Override
             public Adapter defaultCase(EObject object) {
                 return createEObjectAdapter();
             }
@@ -286,6 +290,20 @@ public class ScoreAdapterFactory extends AdapterFactoryImpl {
     }
 
 	/**
+     * Creates a new adapter for an object of class '{@link org.ops4j.coro.model.score.Rest <em>Rest</em>}'.
+     * <!-- begin-user-doc -->
+     * This default implementation returns null so that we can easily ignore cases;
+     * it's useful to ignore a case when inheritance will catch all the cases anyway.
+     * <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.ops4j.coro.model.score.Rest
+     * @generated
+     */
+    public Adapter createRestAdapter() {
+        return null;
+    }
+
+    /**
      * Creates a new adapter for the default case.
      * <!-- begin-user-doc -->
 	 * This default implementation returns null.

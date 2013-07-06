@@ -121,6 +121,15 @@ public interface ScoreFactory extends EFactory {
 	Clef createClef();
 
 	/**
+     * Returns a new object of class '<em>Rest</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Rest</em>'.
+     * @generated
+     */
+    Rest createRest();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

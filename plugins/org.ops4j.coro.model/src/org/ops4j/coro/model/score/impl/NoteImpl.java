@@ -18,6 +18,7 @@ import org.ops4j.coro.model.score.Measure;
 import org.ops4j.coro.model.score.Note;
 import org.ops4j.coro.model.score.NoteType;
 import org.ops4j.coro.model.score.Pitch;
+import org.ops4j.coro.model.score.Rest;
 import org.ops4j.coro.model.score.ScorePackage;
 
 /**
@@ -32,6 +33,8 @@ import org.ops4j.coro.model.score.ScorePackage;
  *   <li>{@link org.ops4j.coro.model.score.impl.NoteImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.impl.NoteImpl#getAccidental <em>Accidental</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.impl.NoteImpl#getMeasure <em>Measure</em>}</li>
+ *   <li>{@link org.ops4j.coro.model.score.impl.NoteImpl#getRest <em>Rest</em>}</li>
+ *   <li>{@link org.ops4j.coro.model.score.impl.NoteImpl#getDots <em>Dots</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,6 +112,36 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
 	protected AccidentalType accidental = ACCIDENTAL_EDEFAULT;
 
 	/**
+     * The cached value of the '{@link #getRest() <em>Rest</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getRest()
+     * @generated
+     * @ordered
+     */
+    protected Rest rest;
+
+    /**
+     * The default value of the '{@link #getDots() <em>Dots</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDots()
+     * @generated
+     * @ordered
+     */
+    protected static final int DOTS_EDEFAULT = 0;
+
+    /**
+     * The cached value of the '{@link #getDots() <em>Dots</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDots()
+     * @generated
+     * @ordered
+     */
+    protected int dots = DOTS_EDEFAULT;
+
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
@@ -271,6 +304,65 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
 
 	/**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Rest getRest() {
+        if (rest != null && rest.eIsProxy()) {
+            InternalEObject oldRest = (InternalEObject)rest;
+            rest = (Rest)eResolveProxy(oldRest);
+            if (rest != oldRest) {
+                if (eNotificationRequired())
+                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScorePackage.NOTE__REST, oldRest, rest));
+            }
+        }
+        return rest;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Rest basicGetRest() {
+        return rest;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setRest(Rest newRest) {
+        Rest oldRest = rest;
+        rest = newRest;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.NOTE__REST, oldRest, rest));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public int getDots() {
+        return dots;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setDots(int newDots) {
+        int oldDots = dots;
+        dots = newDots;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.NOTE__DOTS, oldDots, dots));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -332,6 +424,11 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
                 return getAccidental();
             case ScorePackage.NOTE__MEASURE:
                 return getMeasure();
+            case ScorePackage.NOTE__REST:
+                if (resolve) return getRest();
+                return basicGetRest();
+            case ScorePackage.NOTE__DOTS:
+                return getDots();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -358,6 +455,12 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
                 return;
             case ScorePackage.NOTE__MEASURE:
                 setMeasure((Measure)newValue);
+                return;
+            case ScorePackage.NOTE__REST:
+                setRest((Rest)newValue);
+                return;
+            case ScorePackage.NOTE__DOTS:
+                setDots((Integer)newValue);
                 return;
         }
         super.eSet(featureID, newValue);
@@ -386,6 +489,12 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
             case ScorePackage.NOTE__MEASURE:
                 setMeasure((Measure)null);
                 return;
+            case ScorePackage.NOTE__REST:
+                setRest((Rest)null);
+                return;
+            case ScorePackage.NOTE__DOTS:
+                setDots(DOTS_EDEFAULT);
+                return;
         }
         super.eUnset(featureID);
     }
@@ -408,6 +517,10 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
                 return accidental != ACCIDENTAL_EDEFAULT;
             case ScorePackage.NOTE__MEASURE:
                 return getMeasure() != null;
+            case ScorePackage.NOTE__REST:
+                return rest != null;
+            case ScorePackage.NOTE__DOTS:
+                return dots != DOTS_EDEFAULT;
         }
         return super.eIsSet(featureID);
     }
@@ -428,6 +541,8 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
         result.append(type);
         result.append(", accidental: ");
         result.append(accidental);
+        result.append(", dots: ");
+        result.append(dots);
         result.append(')');
         return result.toString();
     }

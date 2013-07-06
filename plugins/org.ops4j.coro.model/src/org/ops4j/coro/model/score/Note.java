@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.ops4j.coro.model.score.Note#getType <em>Type</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.Note#getAccidental <em>Accidental</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.Note#getMeasure <em>Measure</em>}</li>
+ *   <li>{@link org.ops4j.coro.model.score.Note#getRest <em>Rest</em>}</li>
+ *   <li>{@link org.ops4j.coro.model.score.Note#getDots <em>Dots</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,7 +38,7 @@ public interface Note extends EObject {
      * @return the value of the '<em>Pitch</em>' reference.
      * @see #setPitch(Pitch)
      * @see org.ops4j.coro.model.score.ScorePackage#getNote_Pitch()
-     * @model required="true"
+     * @model
      * @generated
      */
 	Pitch getPitch();
@@ -162,5 +164,57 @@ public interface Note extends EObject {
      * @generated
      */
 	void setMeasure(Measure value);
+
+    /**
+     * Returns the value of the '<em><b>Rest</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Rest</em>' reference isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Rest</em>' reference.
+     * @see #setRest(Rest)
+     * @see org.ops4j.coro.model.score.ScorePackage#getNote_Rest()
+     * @model
+     * @generated
+     */
+    Rest getRest();
+
+    /**
+     * Sets the value of the '{@link org.ops4j.coro.model.score.Note#getRest <em>Rest</em>}' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Rest</em>' reference.
+     * @see #getRest()
+     * @generated
+     */
+    void setRest(Rest value);
+
+    /**
+     * Returns the value of the '<em><b>Dots</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Dots</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Dots</em>' attribute.
+     * @see #setDots(int)
+     * @see org.ops4j.coro.model.score.ScorePackage#getNote_Dots()
+     * @model
+     * @generated
+     */
+    int getDots();
+
+    /**
+     * Sets the value of the '{@link org.ops4j.coro.model.score.Note#getDots <em>Dots</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Dots</em>' attribute.
+     * @see #getDots()
+     * @generated
+     */
+    void setDots(int value);
 
 } // Note

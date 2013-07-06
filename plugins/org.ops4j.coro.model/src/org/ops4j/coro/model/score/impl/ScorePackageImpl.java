@@ -20,6 +20,7 @@ import org.ops4j.coro.model.score.NoteType;
 import org.ops4j.coro.model.score.Part;
 import org.ops4j.coro.model.score.PartList;
 import org.ops4j.coro.model.score.Pitch;
+import org.ops4j.coro.model.score.Rest;
 import org.ops4j.coro.model.score.Score;
 import org.ops4j.coro.model.score.ScoreFactory;
 import org.ops4j.coro.model.score.ScorePackage;
@@ -114,6 +115,13 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
 	private EClass clefEClass = null;
 
 	/**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass restEClass = null;
+
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
@@ -418,6 +426,24 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
 
 	/**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getNote_Rest() {
+        return (EReference)noteEClass.getEStructuralFeatures().get(5);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getNote_Dots() {
+        return (EAttribute)noteEClass.getEStructuralFeatures().get(6);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -544,6 +570,24 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
 
 	/**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getRest() {
+        return restEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getRest_Measure() {
+        return (EAttribute)restEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -644,6 +688,8 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
         createEAttribute(noteEClass, NOTE__TYPE);
         createEAttribute(noteEClass, NOTE__ACCIDENTAL);
         createEReference(noteEClass, NOTE__MEASURE);
+        createEReference(noteEClass, NOTE__REST);
+        createEAttribute(noteEClass, NOTE__DOTS);
 
         pitchEClass = createEClass(PITCH);
         createEAttribute(pitchEClass, PITCH__OCTAVE);
@@ -662,6 +708,9 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
         createEAttribute(clefEClass, CLEF__SIGN);
         createEAttribute(clefEClass, CLEF__LINE);
         createEAttribute(clefEClass, CLEF__OCTAVE_CHANGE);
+
+        restEClass = createEClass(REST);
+        createEAttribute(restEClass, REST__MEASURE);
 
         // Create enums
         stepEEnum = createEEnum(STEP);
@@ -725,11 +774,13 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
         initEAttribute(getMeasure_Marker(), ecorePackage.getEString(), "marker", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(noteEClass, Note.class, "Note", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        initEReference(getNote_Pitch(), this.getPitch(), null, "pitch", null, 1, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getNote_Pitch(), this.getPitch(), null, "pitch", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getNote_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getNote_Type(), this.getNoteType(), "type", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getNote_Accidental(), this.getAccidentalType(), "accidental", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getNote_Measure(), this.getMeasure(), this.getMeasure_Notes(), "measure", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getNote_Rest(), this.getRest(), null, "rest", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getNote_Dots(), ecorePackage.getEInt(), "dots", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(pitchEClass, Pitch.class, "Pitch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getPitch_Octave(), ecorePackage.getEInt(), "octave", null, 0, 1, Pitch.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -748,6 +799,9 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
         initEAttribute(getClef_Sign(), this.getClefSign(), "sign", null, 1, 1, Clef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getClef_Line(), ecorePackage.getEInt(), "line", null, 1, 1, Clef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getClef_OctaveChange(), ecorePackage.getEInt(), "octaveChange", null, 0, 1, Clef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(restEClass, Rest.class, "Rest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getRest_Measure(), ecorePackage.getEBoolean(), "measure", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Initialize enums and add enum literals
         initEEnum(stepEEnum, Step.class, "Step");

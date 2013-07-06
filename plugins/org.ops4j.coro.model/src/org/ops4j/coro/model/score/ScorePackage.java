@@ -380,13 +380,31 @@ public interface ScorePackage extends EPackage {
 	int NOTE__MEASURE = 4;
 
 	/**
+     * The feature id for the '<em><b>Rest</b></em>' reference.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NOTE__REST = 5;
+
+    /**
+     * The feature id for the '<em><b>Dots</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int NOTE__DOTS = 6;
+
+    /**
      * The number of structural features of the '<em>Note</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int NOTE_FEATURE_COUNT = 5;
+	int NOTE_FEATURE_COUNT = 7;
 
 	/**
      * The number of operations of the '<em>Note</em>' class.
@@ -600,6 +618,43 @@ public interface ScorePackage extends EPackage {
 	int CLEF_OPERATION_COUNT = 0;
 
 	/**
+     * The meta object id for the '{@link org.ops4j.coro.model.score.impl.RestImpl <em>Rest</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.ops4j.coro.model.score.impl.RestImpl
+     * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getRest()
+     * @generated
+     */
+    int REST = 11;
+
+    /**
+     * The feature id for the '<em><b>Measure</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REST__MEASURE = 0;
+
+    /**
+     * The number of structural features of the '<em>Rest</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REST_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Rest</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int REST_OPERATION_COUNT = 0;
+
+    /**
      * The meta object id for the '{@link org.ops4j.coro.model.score.Step <em>Step</em>}' enum.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -607,7 +662,7 @@ public interface ScorePackage extends EPackage {
      * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getStep()
      * @generated
      */
-	int STEP = 11;
+	int STEP = 12;
 
 	/**
      * The meta object id for the '{@link org.ops4j.coro.model.score.NoteType <em>Note Type</em>}' enum.
@@ -617,7 +672,7 @@ public interface ScorePackage extends EPackage {
      * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getNoteType()
      * @generated
      */
-	int NOTE_TYPE = 12;
+	int NOTE_TYPE = 13;
 
 	/**
      * The meta object id for the '{@link org.ops4j.coro.model.score.AccidentalType <em>Accidental Type</em>}' enum.
@@ -627,7 +682,7 @@ public interface ScorePackage extends EPackage {
      * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getAccidentalType()
      * @generated
      */
-	int ACCIDENTAL_TYPE = 13;
+	int ACCIDENTAL_TYPE = 14;
 
 	/**
      * The meta object id for the '{@link org.ops4j.coro.model.score.TimeSymbol <em>Time Symbol</em>}' enum.
@@ -637,7 +692,7 @@ public interface ScorePackage extends EPackage {
      * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getTimeSymbol()
      * @generated
      */
-	int TIME_SYMBOL = 14;
+	int TIME_SYMBOL = 15;
 
 	/**
      * The meta object id for the '{@link org.ops4j.coro.model.score.ClefSign <em>Clef Sign</em>}' enum.
@@ -647,7 +702,7 @@ public interface ScorePackage extends EPackage {
      * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getClefSign()
      * @generated
      */
-	int CLEF_SIGN = 15;
+	int CLEF_SIGN = 16;
 
 
 	/**
@@ -897,6 +952,28 @@ public interface ScorePackage extends EPackage {
 	EReference getNote_Measure();
 
 	/**
+     * Returns the meta object for the reference '{@link org.ops4j.coro.model.score.Note#getRest <em>Rest</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the reference '<em>Rest</em>'.
+     * @see org.ops4j.coro.model.score.Note#getRest()
+     * @see #getNote()
+     * @generated
+     */
+    EReference getNote_Rest();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.ops4j.coro.model.score.Note#getDots <em>Dots</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Dots</em>'.
+     * @see org.ops4j.coro.model.score.Note#getDots()
+     * @see #getNote()
+     * @generated
+     */
+    EAttribute getNote_Dots();
+
+    /**
      * Returns the meta object for class '{@link org.ops4j.coro.model.score.Pitch <em>Pitch</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1047,6 +1124,27 @@ public interface ScorePackage extends EPackage {
 	EAttribute getClef_OctaveChange();
 
 	/**
+     * Returns the meta object for class '{@link org.ops4j.coro.model.score.Rest <em>Rest</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Rest</em>'.
+     * @see org.ops4j.coro.model.score.Rest
+     * @generated
+     */
+    EClass getRest();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.ops4j.coro.model.score.Rest#isMeasure <em>Measure</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Measure</em>'.
+     * @see org.ops4j.coro.model.score.Rest#isMeasure()
+     * @see #getRest()
+     * @generated
+     */
+    EAttribute getRest_Measure();
+
+    /**
      * Returns the meta object for enum '{@link org.ops4j.coro.model.score.Step <em>Step</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1318,6 +1416,22 @@ public interface ScorePackage extends EPackage {
 		EReference NOTE__MEASURE = eINSTANCE.getNote_Measure();
 
 		/**
+         * The meta object literal for the '<em><b>Rest</b></em>' reference feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference NOTE__REST = eINSTANCE.getNote_Rest();
+
+        /**
+         * The meta object literal for the '<em><b>Dots</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute NOTE__DOTS = eINSTANCE.getNote_Dots();
+
+        /**
          * The meta object literal for the '{@link org.ops4j.coro.model.score.impl.PitchImpl <em>Pitch</em>}' class.
          * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1438,6 +1552,24 @@ public interface ScorePackage extends EPackage {
 		EAttribute CLEF__OCTAVE_CHANGE = eINSTANCE.getClef_OctaveChange();
 
 		/**
+         * The meta object literal for the '{@link org.ops4j.coro.model.score.impl.RestImpl <em>Rest</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.ops4j.coro.model.score.impl.RestImpl
+         * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getRest()
+         * @generated
+         */
+        EClass REST = eINSTANCE.getRest();
+
+        /**
+         * The meta object literal for the '<em><b>Measure</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute REST__MEASURE = eINSTANCE.getRest_Measure();
+
+        /**
          * The meta object literal for the '{@link org.ops4j.coro.model.score.Step <em>Step</em>}' enum.
          * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
