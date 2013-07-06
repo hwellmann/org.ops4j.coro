@@ -30,13 +30,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="marker" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Note">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pitch" eType="#//Pitch"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pitch" eType="#//Pitch"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//NoteType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="accidental" eType="#//AccidentalType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="measure" eType="#//Measure"
         eOpposite="#//Measure/notes"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rest" eType="#//Rest"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rest" eType="#//Rest" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dots" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pitch">

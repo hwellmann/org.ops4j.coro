@@ -42,7 +42,7 @@ import org.ops4j.coro.model.score.ScorePackage;
  */
 public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
 	/**
-     * The cached value of the '{@link #getPitch() <em>Pitch</em>}' reference.
+     * The cached value of the '{@link #getPitch() <em>Pitch</em>}' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @see #getPitch()
@@ -112,7 +112,7 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
 	protected AccidentalType accidental = ACCIDENTAL_EDEFAULT;
 
 	/**
-     * The cached value of the '{@link #getRest() <em>Rest</em>}' reference.
+     * The cached value of the '{@link #getRest() <em>Rest</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @see #getRest()
@@ -166,36 +166,41 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
      * @generated
      */
 	public Pitch getPitch() {
-        if (pitch != null && pitch.eIsProxy()) {
-            InternalEObject oldPitch = (InternalEObject)pitch;
-            pitch = (Pitch)eResolveProxy(oldPitch);
-            if (pitch != oldPitch) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScorePackage.NOTE__PITCH, oldPitch, pitch));
-            }
-        }
         return pitch;
     }
 
 	/**
      * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
-	public Pitch basicGetPitch() {
-        return pitch;
+    public NotificationChain basicSetPitch(Pitch newPitch, NotificationChain msgs) {
+        Pitch oldPitch = pitch;
+        pitch = newPitch;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScorePackage.NOTE__PITCH, oldPitch, newPitch);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
     }
 
-	/**
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
 	public void setPitch(Pitch newPitch) {
-        Pitch oldPitch = pitch;
-        pitch = newPitch;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.NOTE__PITCH, oldPitch, pitch));
+        if (newPitch != pitch) {
+            NotificationChain msgs = null;
+            if (pitch != null)
+                msgs = ((InternalEObject)pitch).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScorePackage.NOTE__PITCH, null, msgs);
+            if (newPitch != null)
+                msgs = ((InternalEObject)newPitch).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScorePackage.NOTE__PITCH, null, msgs);
+            msgs = basicSetPitch(newPitch, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.NOTE__PITCH, newPitch, newPitch));
     }
 
 	/**
@@ -308,14 +313,6 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
      * @generated
      */
     public Rest getRest() {
-        if (rest != null && rest.eIsProxy()) {
-            InternalEObject oldRest = (InternalEObject)rest;
-            rest = (Rest)eResolveProxy(oldRest);
-            if (rest != oldRest) {
-                if (eNotificationRequired())
-                    eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScorePackage.NOTE__REST, oldRest, rest));
-            }
-        }
         return rest;
     }
 
@@ -324,8 +321,14 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
      * <!-- end-user-doc -->
      * @generated
      */
-    public Rest basicGetRest() {
-        return rest;
+    public NotificationChain basicSetRest(Rest newRest, NotificationChain msgs) {
+        Rest oldRest = rest;
+        rest = newRest;
+        if (eNotificationRequired()) {
+            ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScorePackage.NOTE__REST, oldRest, newRest);
+            if (msgs == null) msgs = notification; else msgs.add(notification);
+        }
+        return msgs;
     }
 
     /**
@@ -334,10 +337,17 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
      * @generated
      */
     public void setRest(Rest newRest) {
-        Rest oldRest = rest;
-        rest = newRest;
-        if (eNotificationRequired())
-            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.NOTE__REST, oldRest, rest));
+        if (newRest != rest) {
+            NotificationChain msgs = null;
+            if (rest != null)
+                msgs = ((InternalEObject)rest).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScorePackage.NOTE__REST, null, msgs);
+            if (newRest != null)
+                msgs = ((InternalEObject)newRest).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScorePackage.NOTE__REST, null, msgs);
+            msgs = basicSetRest(newRest, msgs);
+            if (msgs != null) msgs.dispatch();
+        }
+        else if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.NOTE__REST, newRest, newRest));
     }
 
     /**
@@ -385,8 +395,12 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
         switch (featureID) {
+            case ScorePackage.NOTE__PITCH:
+                return basicSetPitch(null, msgs);
             case ScorePackage.NOTE__MEASURE:
                 return basicSetMeasure(null, msgs);
+            case ScorePackage.NOTE__REST:
+                return basicSetRest(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -414,8 +428,7 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
             case ScorePackage.NOTE__PITCH:
-                if (resolve) return getPitch();
-                return basicGetPitch();
+                return getPitch();
             case ScorePackage.NOTE__DURATION:
                 return getDuration();
             case ScorePackage.NOTE__TYPE:
@@ -425,8 +438,7 @@ public class NoteImpl extends MinimalEObjectImpl.Container implements Note {
             case ScorePackage.NOTE__MEASURE:
                 return getMeasure();
             case ScorePackage.NOTE__REST:
-                if (resolve) return getRest();
-                return basicGetRest();
+                return getRest();
             case ScorePackage.NOTE__DOTS:
                 return getDots();
         }

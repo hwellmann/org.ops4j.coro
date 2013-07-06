@@ -1,9 +1,11 @@
 package org.ops4j.coro.ui.score.editor.features;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.context.ICustomContext;
 import org.eclipse.graphiti.features.custom.AbstractCustomFeature;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
+import org.ops4j.coro.model.score.Note;
 
 
 public class NotePitchFeature extends AbstractCustomFeature {
@@ -18,7 +20,11 @@ public class NotePitchFeature extends AbstractCustomFeature {
     @Override
     public boolean canExecute(ICustomContext context) {
         PictogramElement[] pictogramElements = context.getPictogramElements();
-        return true;
+        if (pictogramElements.length != 1) {
+            return false;
+        }
+        EObject obj = pictogramElements[0].getLink().getBusinessObjects().get(0);
+        return (obj instanceof Note);
     }
 
     @Override

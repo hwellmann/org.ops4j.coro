@@ -28,26 +28,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Note extends EObject {
 	/**
-     * Returns the value of the '<em><b>Pitch</b></em>' reference.
+     * Returns the value of the '<em><b>Pitch</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Pitch</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-     * @return the value of the '<em>Pitch</em>' reference.
+     * @return the value of the '<em>Pitch</em>' containment reference.
      * @see #setPitch(Pitch)
      * @see org.ops4j.coro.model.score.ScorePackage#getNote_Pitch()
-     * @model
+     * @model containment="true"
      * @generated
      */
 	Pitch getPitch();
 
 	/**
-     * Sets the value of the '{@link org.ops4j.coro.model.score.Note#getPitch <em>Pitch</em>}' reference.
+     * Sets the value of the '{@link org.ops4j.coro.model.score.Note#getPitch <em>Pitch</em>}' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Pitch</em>' reference.
+     * @param value the new value of the '<em>Pitch</em>' containment reference.
      * @see #getPitch()
      * @generated
      */
@@ -166,26 +166,26 @@ public interface Note extends EObject {
 	void setMeasure(Measure value);
 
     /**
-     * Returns the value of the '<em><b>Rest</b></em>' reference.
+     * Returns the value of the '<em><b>Rest</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Rest</em>' reference isn't clear,
      * there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     * @return the value of the '<em>Rest</em>' reference.
+     * @return the value of the '<em>Rest</em>' containment reference.
      * @see #setRest(Rest)
      * @see org.ops4j.coro.model.score.ScorePackage#getNote_Rest()
-     * @model
+     * @model containment="true"
      * @generated
      */
     Rest getRest();
 
     /**
-     * Sets the value of the '{@link org.ops4j.coro.model.score.Note#getRest <em>Rest</em>}' reference.
+     * Sets the value of the '{@link org.ops4j.coro.model.score.Note#getRest <em>Rest</em>}' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @param value the new value of the '<em>Rest</em>' reference.
+     * @param value the new value of the '<em>Rest</em>' containment reference.
      * @see #getRest()
      * @generated
      */

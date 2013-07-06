@@ -335,7 +335,7 @@ public interface ScorePackage extends EPackage {
 	int NOTE = 6;
 
 	/**
-     * The feature id for the '<em><b>Pitch</b></em>' reference.
+     * The feature id for the '<em><b>Pitch</b></em>' containment reference.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
@@ -380,7 +380,7 @@ public interface ScorePackage extends EPackage {
 	int NOTE__MEASURE = 4;
 
 	/**
-     * The feature id for the '<em><b>Rest</b></em>' reference.
+     * The feature id for the '<em><b>Rest</b></em>' containment reference.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -897,10 +897,10 @@ public interface ScorePackage extends EPackage {
 	EClass getNote();
 
 	/**
-     * Returns the meta object for the reference '{@link org.ops4j.coro.model.score.Note#getPitch <em>Pitch</em>}'.
+     * Returns the meta object for the containment reference '{@link org.ops4j.coro.model.score.Note#getPitch <em>Pitch</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Pitch</em>'.
+     * @return the meta object for the containment reference '<em>Pitch</em>'.
      * @see org.ops4j.coro.model.score.Note#getPitch()
      * @see #getNote()
      * @generated
@@ -952,10 +952,10 @@ public interface ScorePackage extends EPackage {
 	EReference getNote_Measure();
 
 	/**
-     * Returns the meta object for the reference '{@link org.ops4j.coro.model.score.Note#getRest <em>Rest</em>}'.
+     * Returns the meta object for the containment reference '{@link org.ops4j.coro.model.score.Note#getRest <em>Rest</em>}'.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @return the meta object for the reference '<em>Rest</em>'.
+     * @return the meta object for the containment reference '<em>Rest</em>'.
      * @see org.ops4j.coro.model.score.Note#getRest()
      * @see #getNote()
      * @generated
@@ -1376,7 +1376,7 @@ public interface ScorePackage extends EPackage {
 		EClass NOTE = eINSTANCE.getNote();
 
 		/**
-         * The meta object literal for the '<em><b>Pitch</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Pitch</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
          * @generated
@@ -1416,7 +1416,7 @@ public interface ScorePackage extends EPackage {
 		EReference NOTE__MEASURE = eINSTANCE.getNote_Measure();
 
 		/**
-         * The meta object literal for the '<em><b>Rest</b></em>' reference feature.
+         * The meta object literal for the '<em><b>Rest</b></em>' containment reference feature.
          * <!-- begin-user-doc -->
          * <!-- end-user-doc -->
          * @generated
