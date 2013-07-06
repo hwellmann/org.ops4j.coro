@@ -57,7 +57,8 @@ public class MeasureAddFeature extends AbstractAddShapeFeature {
         // create shape for text
         Shape markerShape = peCreateService.createShape(containerShape, false);
 
-        String text = measure.getMarker().charAt(1) + MusicSymbol.NOTEHEAD_HALF.asString();
+        String text = MusicSymbol.REST_WHOLE.asString();
+        //String text = measure.getMarker().charAt(1) + MusicSymbol.NOTEHEAD_HALF.asString();
         // create and set text graphics algorithm
 //      final Text text = gaService.createPlainText(markerShape, measure.getMarker());
 //        text.setStyle(StyleFactory.getStyleForText(getDiagram()));
@@ -66,21 +67,12 @@ public class MeasureAddFeature extends AbstractAddShapeFeature {
         textGa.setStyle(musicStyle);
         
         IDimension dimension = GraphitiUi.getUiLayoutService().calculateTextSize(text, musicStyle.getFont());
-        gaService.setLocationAndSize(textGa, 20, -20, dimension.getWidth(), dimension.getHeight());
+        gaService.setLocationAndSize(textGa, 45, -45, dimension.getWidth(), dimension.getHeight());
 
         // create link and wire it
         link(containerShape, measure);
-        link(markerShape, measure);
+        link(markerShape, measure.getNotes().get(0));
 
-        // provide information to support direct-editing directly
-        // after object creation (must be activated additionally)
-        final IDirectEditingInfo directEditingInfo = getFeatureProvider().getDirectEditingInfo();
-        // set container shape for direct editing after object creation
-        directEditingInfo.setMainPictogramElement(containerShape);
-        // set shape and graphics algorithm where the editor for
-        // direct editing shall be opened after object creation
-        directEditingInfo.setPictogramElement(markerShape);
-        directEditingInfo.setGraphicsAlgorithm(textGa);
         
         
         layoutPictogramElement(targetContainer);

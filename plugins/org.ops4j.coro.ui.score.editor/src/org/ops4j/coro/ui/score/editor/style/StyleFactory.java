@@ -88,7 +88,7 @@ public class StyleFactory {
         if (style == null) { // style not found - create new style
             style = gaService.createPlainStyle(parentStyle, styleId);
             setCommonTextValues(diagram, gaService, style);
-            style.setFont(gaService.manageFont(diagram, "Gonville-20", 20));
+            style.setFont(gaService.manageFont(diagram, "Gonville-20", 30));
         }
         return style;
     }

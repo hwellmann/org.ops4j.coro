@@ -54,7 +54,7 @@ public class ScoreEditorPlugin extends AbstractUIPlugin {
 
         // The font file has to remain in place, even after loading the font.
         // We delete it in stop().
-        font = new Font(display, "Gonville-20", 20, SWT.NORMAL);
+        font = new Font(display, "Gonville-20", 30, SWT.NORMAL);
     }
 
     public void stop(BundleContext context) throws Exception {

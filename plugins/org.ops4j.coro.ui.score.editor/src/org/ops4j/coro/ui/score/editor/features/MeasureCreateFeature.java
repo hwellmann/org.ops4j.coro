@@ -9,10 +9,19 @@ import org.eclipse.graphiti.features.context.ICreateContext;
 import org.eclipse.graphiti.features.impl.AbstractCreateFeature;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
 import org.ops4j.coro.model.score.Measure;
+import org.ops4j.coro.model.score.Note;
+import org.ops4j.coro.model.score.NoteType;
 import org.ops4j.coro.model.score.Part;
+import org.ops4j.coro.model.score.Rest;
 import org.ops4j.coro.model.score.ScoreFactory;
 
 public class MeasureCreateFeature extends AbstractCreateFeature {
+    
+    /** 
+     * Divisions per quarter note.
+     * TODO make configurable 
+     */
+    private static final int DIVISIONS = 24;
 
     public MeasureCreateFeature(IFeatureProvider fp) {
         super(fp, "Measure", "Create a measure");
@@ -38,20 +47,17 @@ public class MeasureCreateFeature extends AbstractCreateFeature {
             .getBusinessObjects();
 
         Measure measure = ScoreFactory.eINSTANCE.createMeasure();
+        fillMeasureWithRest(measure);
 
         EObject container = containerObjects.get(0);
         if (container instanceof Part) {
             Part part = (Part) container;
             List<Measure> measures = part.getMeasures();
-            int number = measures.size() + 1;
-            measure.setMarker("M" + number);
             measures.add(measure);
         }
         else if (container instanceof Measure) {
             Measure previousMeasure = (Measure) container;
             EList<Measure> measures = previousMeasure.getPart().getMeasures();
-            int number = measures.size() + 1;
-            measure.setMarker("M" + number);
             int index = measures.indexOf(previousMeasure);
             measures.add(index+1, measure);
         }
@@ -59,6 +65,16 @@ public class MeasureCreateFeature extends AbstractCreateFeature {
         // add the corresponding graphical representation
         addGraphicalRepresentation(context, measure);
         return new Object[] { measure };
+    }
+
+    private void fillMeasureWithRest(Measure measure) {
+        Note note = ScoreFactory.eINSTANCE.createNote();
+        note.setDuration(4 * DIVISIONS);
+        note.setType(NoteType.WHOLE);
+
+        Rest rest = ScoreFactory.eINSTANCE.createRest();
+        note.setRest(rest);
+        measure.getNotes().add(note);
     }
 
 }

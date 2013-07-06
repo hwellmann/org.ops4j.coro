@@ -21,5 +21,14 @@ public class CoroToolBehaviour extends DefaultToolBehaviorProvider {
         }
         return super.getCommandFeature(context, hint);
     }
+    
+    /**
+     * Equality by identity. Graphiti uses EMF equality by default, which is not
+     * approriate for Coro. E.g. two measures with the same content are not equal.
+     */
+    @Override
+    public boolean equalsBusinessObjects(Object o1, Object o2) {
+        return o1 == o2;
+    }
 
 }
