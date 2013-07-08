@@ -88,7 +88,10 @@ public class StyleFactory {
         if (style == null) { // style not found - create new style
             style = gaService.createPlainStyle(parentStyle, styleId);
             setCommonTextValues(diagram, gaService, style);
-            style.setFont(gaService.manageFont(diagram, "Gonville-20", 30));
+            style.setHorizontalAlignment(Orientation.ALIGNMENT_LEFT);
+            style.setVerticalAlignment(Orientation.ALIGNMENT_TOP);
+            style.setFont(gaService.manageFont(diagram, FontService.GONVILLE_FONT_NAME,
+                FontService.GONVILLE_FONT_SIZE));
         }
         return style;
     }
