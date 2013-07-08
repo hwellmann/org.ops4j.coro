@@ -54,10 +54,10 @@ public class MeasureAddFeature extends AbstractAddShapeFeature {
         
         Shape markerShape = peCreateService.createShape(containerShape, true);
 
-        String text = MusicSymbol.NOTEHEAD_WHOLE.asString();
+        String text = MusicSymbol.REST_WHOLE.asString();
         final MultiText textGa = gaService.createPlainMultiText(markerShape, text);
         int ascent = FontService.getInstance().getMusicFontAscent();
-        gaService.setLocationAndSize(textGa, 0, 30-ascent, 60, 60);        
+        gaService.setLocationAndSize(textGa, 40, 10-ascent, 60, 60);        
         Style musicStyle = StyleFactory.getStyleForMusic(getDiagram());
         textGa.setStyle(musicStyle);
         
