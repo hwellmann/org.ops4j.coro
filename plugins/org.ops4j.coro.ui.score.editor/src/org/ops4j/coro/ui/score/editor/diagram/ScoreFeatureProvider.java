@@ -11,6 +11,8 @@ import org.eclipse.graphiti.ui.features.DefaultFeatureProvider;
 import org.ops4j.coro.model.score.Part;
 import org.ops4j.coro.ui.score.editor.features.MeasureAddFeature;
 import org.ops4j.coro.ui.score.editor.features.MeasureCreateFeature;
+import org.ops4j.coro.ui.score.editor.features.NoteAddFeature;
+import org.ops4j.coro.ui.score.editor.features.NoteCreateFeature;
 import org.ops4j.coro.ui.score.editor.features.PartAddFeature;
 import org.ops4j.coro.ui.score.editor.features.PartCreateFeature;
 import org.ops4j.coro.ui.score.editor.features.PartLayoutFeature;
@@ -19,6 +21,7 @@ public class ScoreFeatureProvider extends DefaultFeatureProvider {
 
     private IAddFeature measureAddFeature = new MeasureAddFeature(this);
     private IAddFeature partAddFeature = new PartAddFeature(this);
+    private IAddFeature noteAddFeature = new NoteAddFeature(this);
 
     public ScoreFeatureProvider(IDiagramTypeProvider dtp) {
         super(dtp);
@@ -26,7 +29,7 @@ public class ScoreFeatureProvider extends DefaultFeatureProvider {
 
     @Override
     public ICreateFeature[] getCreateFeatures() {
-        return new ICreateFeature[] { new PartCreateFeature(this), new MeasureCreateFeature(this) };
+        return new ICreateFeature[] { new PartCreateFeature(this), new MeasureCreateFeature(this),  new NoteCreateFeature(this) };
     }
 
     @Override
@@ -46,6 +49,9 @@ public class ScoreFeatureProvider extends DefaultFeatureProvider {
         }
         if (partAddFeature.canAdd(context)) {
             return partAddFeature;
+        }
+        if (noteAddFeature.canAdd(context)) {
+            return noteAddFeature;
         }
         return super.getAddFeature(context);
     }
