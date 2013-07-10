@@ -39,11 +39,8 @@ public class NoteCreateFeature extends AbstractCreateFeature {
     }
 
     public Object[] create(ICreateContext context) {
-        System.out.println(context);
-        // get the container business element
         List<EObject> containerObjects = context.getTargetContainer().getLink()
             .getBusinessObjects();
-
 
         Measure measure = (Measure) containerObjects.get(0);
         Note note = createNote(context);

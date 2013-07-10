@@ -19,6 +19,8 @@ import org.ops4j.coro.ui.score.editor.style.StyleFactory;
 
 public class NoteAddFeature extends AbstractAddShapeFeature {
 
+    private static final int SPATIUM = 10;
+
     public NoteAddFeature(IFeatureProvider fp) {
         super(fp);
     }
@@ -76,7 +78,7 @@ public class NoteAddFeature extends AbstractAddShapeFeature {
                 vStep = 7;
                 break;
         }
-        return vStep * 10 / 2;
+        return vStep * SPATIUM / 2;
     }
 
     
