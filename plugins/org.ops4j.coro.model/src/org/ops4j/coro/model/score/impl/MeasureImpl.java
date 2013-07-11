@@ -15,10 +15,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.ops4j.coro.model.score.BarLine;
 import org.ops4j.coro.model.score.Clef;
 import org.ops4j.coro.model.score.Key;
 import org.ops4j.coro.model.score.Measure;
@@ -40,6 +42,7 @@ import org.ops4j.coro.model.score.Time;
  *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getClef <em>Clef</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getPart <em>Part</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getMarker <em>Marker</em>}</li>
+ *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getBarLines <em>Bar Lines</em>}</li>
  * </ul>
  * </p>
  *
@@ -105,6 +108,16 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
      * @ordered
      */
     protected String marker = MARKER_EDEFAULT;
+
+    /**
+     * The cached value of the '{@link #getBarLines() <em>Bar Lines</em>}' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getBarLines()
+     * @generated
+     * @ordered
+     */
+    protected EList<BarLine> barLines;
 
     /**
      * <!-- begin-user-doc -->
@@ -330,6 +343,18 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EList<BarLine> getBarLines() {
+        if (barLines == null) {
+            barLines = new EObjectContainmentEList<BarLine>(BarLine.class, this, ScorePackage.MEASURE__BAR_LINES);
+        }
+        return barLines;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -365,6 +390,8 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
                 return basicSetClef(null, msgs);
             case ScorePackage.MEASURE__PART:
                 return basicSetPart(null, msgs);
+            case ScorePackage.MEASURE__BAR_LINES:
+                return ((InternalEList<?>)getBarLines()).basicRemove(otherEnd, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
     }
@@ -403,6 +430,8 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
                 return getPart();
             case ScorePackage.MEASURE__MARKER:
                 return getMarker();
+            case ScorePackage.MEASURE__BAR_LINES:
+                return getBarLines();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -435,6 +464,10 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
             case ScorePackage.MEASURE__MARKER:
                 setMarker((String)newValue);
                 return;
+            case ScorePackage.MEASURE__BAR_LINES:
+                getBarLines().clear();
+                getBarLines().addAll((Collection<? extends BarLine>)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -465,6 +498,9 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
             case ScorePackage.MEASURE__MARKER:
                 setMarker(MARKER_EDEFAULT);
                 return;
+            case ScorePackage.MEASURE__BAR_LINES:
+                getBarLines().clear();
+                return;
         }
         super.eUnset(featureID);
     }
@@ -489,6 +525,8 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
                 return getPart() != null;
             case ScorePackage.MEASURE__MARKER:
                 return MARKER_EDEFAULT == null ? marker != null : !MARKER_EDEFAULT.equals(marker);
+            case ScorePackage.MEASURE__BAR_LINES:
+                return barLines != null && !barLines.isEmpty();
         }
         return super.eIsSet(featureID);
     }

@@ -307,13 +307,22 @@ public interface ScorePackage extends EPackage {
     int MEASURE__MARKER = 5;
 
     /**
+     * The feature id for the '<em><b>Bar Lines</b></em>' containment reference list.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MEASURE__BAR_LINES = 6;
+
+    /**
      * The number of structural features of the '<em>Measure</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int MEASURE_FEATURE_COUNT = 6;
+	int MEASURE_FEATURE_COUNT = 7;
 
 	/**
      * The number of operations of the '<em>Measure</em>' class.
@@ -655,6 +664,43 @@ public interface ScorePackage extends EPackage {
     int REST_OPERATION_COUNT = 0;
 
     /**
+     * The meta object id for the '{@link org.ops4j.coro.model.score.impl.BarLineImpl <em>Bar Line</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.ops4j.coro.model.score.impl.BarLineImpl
+     * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getBarLine()
+     * @generated
+     */
+    int BAR_LINE = 12;
+
+    /**
+     * The feature id for the '<em><b>Position</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BAR_LINE__POSITION = 0;
+
+    /**
+     * The number of structural features of the '<em>Bar Line</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BAR_LINE_FEATURE_COUNT = 1;
+
+    /**
+     * The number of operations of the '<em>Bar Line</em>' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int BAR_LINE_OPERATION_COUNT = 0;
+
+    /**
      * The meta object id for the '{@link org.ops4j.coro.model.score.Step <em>Step</em>}' enum.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -662,7 +708,7 @@ public interface ScorePackage extends EPackage {
      * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getStep()
      * @generated
      */
-	int STEP = 12;
+	int STEP = 13;
 
 	/**
      * The meta object id for the '{@link org.ops4j.coro.model.score.NoteType <em>Note Type</em>}' enum.
@@ -672,7 +718,7 @@ public interface ScorePackage extends EPackage {
      * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getNoteType()
      * @generated
      */
-	int NOTE_TYPE = 13;
+	int NOTE_TYPE = 14;
 
 	/**
      * The meta object id for the '{@link org.ops4j.coro.model.score.AccidentalType <em>Accidental Type</em>}' enum.
@@ -682,7 +728,7 @@ public interface ScorePackage extends EPackage {
      * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getAccidentalType()
      * @generated
      */
-	int ACCIDENTAL_TYPE = 14;
+	int ACCIDENTAL_TYPE = 15;
 
 	/**
      * The meta object id for the '{@link org.ops4j.coro.model.score.TimeSymbol <em>Time Symbol</em>}' enum.
@@ -692,7 +738,7 @@ public interface ScorePackage extends EPackage {
      * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getTimeSymbol()
      * @generated
      */
-	int TIME_SYMBOL = 15;
+	int TIME_SYMBOL = 16;
 
 	/**
      * The meta object id for the '{@link org.ops4j.coro.model.score.ClefSign <em>Clef Sign</em>}' enum.
@@ -702,10 +748,21 @@ public interface ScorePackage extends EPackage {
      * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getClefSign()
      * @generated
      */
-	int CLEF_SIGN = 16;
+	int CLEF_SIGN = 17;
 
 
 	/**
+     * The meta object id for the '{@link org.ops4j.coro.model.score.Position <em>Position</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.ops4j.coro.model.score.Position
+     * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getPosition()
+     * @generated
+     */
+    int POSITION = 18;
+
+
+    /**
      * Returns the meta object for class '{@link org.ops4j.coro.model.score.Score <em>Score</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -885,6 +942,17 @@ public interface ScorePackage extends EPackage {
      * @generated
      */
     EAttribute getMeasure_Marker();
+
+    /**
+     * Returns the meta object for the containment reference list '{@link org.ops4j.coro.model.score.Measure#getBarLines <em>Bar Lines</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the containment reference list '<em>Bar Lines</em>'.
+     * @see org.ops4j.coro.model.score.Measure#getBarLines()
+     * @see #getMeasure()
+     * @generated
+     */
+    EReference getMeasure_BarLines();
 
     /**
      * Returns the meta object for class '{@link org.ops4j.coro.model.score.Note <em>Note</em>}'.
@@ -1145,6 +1213,27 @@ public interface ScorePackage extends EPackage {
     EAttribute getRest_Measure();
 
     /**
+     * Returns the meta object for class '{@link org.ops4j.coro.model.score.BarLine <em>Bar Line</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for class '<em>Bar Line</em>'.
+     * @see org.ops4j.coro.model.score.BarLine
+     * @generated
+     */
+    EClass getBarLine();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.ops4j.coro.model.score.BarLine#getPosition <em>Position</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Position</em>'.
+     * @see org.ops4j.coro.model.score.BarLine#getPosition()
+     * @see #getBarLine()
+     * @generated
+     */
+    EAttribute getBarLine_Position();
+
+    /**
      * Returns the meta object for enum '{@link org.ops4j.coro.model.score.Step <em>Step</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1195,6 +1284,16 @@ public interface ScorePackage extends EPackage {
 	EEnum getClefSign();
 
 	/**
+     * Returns the meta object for enum '{@link org.ops4j.coro.model.score.Position <em>Position</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for enum '<em>Position</em>'.
+     * @see org.ops4j.coro.model.score.Position
+     * @generated
+     */
+    EEnum getPosition();
+
+    /**
      * Returns the factory that creates the instances of the model.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1364,6 +1463,14 @@ public interface ScorePackage extends EPackage {
          * @generated
          */
         EAttribute MEASURE__MARKER = eINSTANCE.getMeasure_Marker();
+
+        /**
+         * The meta object literal for the '<em><b>Bar Lines</b></em>' containment reference list feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EReference MEASURE__BAR_LINES = eINSTANCE.getMeasure_BarLines();
 
         /**
          * The meta object literal for the '{@link org.ops4j.coro.model.score.impl.NoteImpl <em>Note</em>}' class.
@@ -1570,6 +1677,24 @@ public interface ScorePackage extends EPackage {
         EAttribute REST__MEASURE = eINSTANCE.getRest_Measure();
 
         /**
+         * The meta object literal for the '{@link org.ops4j.coro.model.score.impl.BarLineImpl <em>Bar Line</em>}' class.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.ops4j.coro.model.score.impl.BarLineImpl
+         * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getBarLine()
+         * @generated
+         */
+        EClass BAR_LINE = eINSTANCE.getBarLine();
+
+        /**
+         * The meta object literal for the '<em><b>Position</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute BAR_LINE__POSITION = eINSTANCE.getBarLine_Position();
+
+        /**
          * The meta object literal for the '{@link org.ops4j.coro.model.score.Step <em>Step</em>}' enum.
          * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1618,6 +1743,16 @@ public interface ScorePackage extends EPackage {
          * @generated
          */
 		EEnum CLEF_SIGN = eINSTANCE.getClefSign();
+
+        /**
+         * The meta object literal for the '{@link org.ops4j.coro.model.score.Position <em>Position</em>}' enum.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @see org.ops4j.coro.model.score.Position
+         * @see org.ops4j.coro.model.score.impl.ScorePackageImpl#getPosition()
+         * @generated
+         */
+        EEnum POSITION = eINSTANCE.getPosition();
 
 	}
 

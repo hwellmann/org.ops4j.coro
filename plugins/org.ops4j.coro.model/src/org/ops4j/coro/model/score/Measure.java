@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.ops4j.coro.model.score.Measure#getClef <em>Clef</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.Measure#getPart <em>Part</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.Measure#getMarker <em>Marker</em>}</li>
+ *   <li>{@link org.ops4j.coro.model.score.Measure#getBarLines <em>Bar Lines</em>}</li>
  * </ul>
  * </p>
  *
@@ -177,5 +178,21 @@ public interface Measure extends EObject {
      * @generated
      */
     void setMarker(String value);
+
+    /**
+     * Returns the value of the '<em><b>Bar Lines</b></em>' containment reference list.
+     * The list contents are of type {@link org.ops4j.coro.model.score.BarLine}.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Bar Lines</em>' containment reference list isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Bar Lines</em>' containment reference list.
+     * @see org.ops4j.coro.model.score.ScorePackage#getMeasure_BarLines()
+     * @model containment="true" required="true"
+     * @generated
+     */
+    EList<BarLine> getBarLines();
 
 } // Measure

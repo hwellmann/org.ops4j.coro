@@ -130,6 +130,15 @@ public interface ScoreFactory extends EFactory {
     Rest createRest();
 
     /**
+     * Returns a new object of class '<em>Bar Line</em>'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return a new object of class '<em>Bar Line</em>'.
+     * @generated
+     */
+    BarLine createBarLine();
+
+    /**
      * Returns the package supported by this factory.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

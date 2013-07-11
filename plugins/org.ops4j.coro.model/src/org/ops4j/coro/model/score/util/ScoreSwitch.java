@@ -138,6 +138,12 @@ public class ScoreSwitch<T> extends Switch<T> {
                 if (result == null) result = defaultCase(theEObject);
                 return result;
             }
+            case ScorePackage.BAR_LINE: {
+                BarLine barLine = (BarLine)theEObject;
+                T result = caseBarLine(barLine);
+                if (result == null) result = defaultCase(theEObject);
+                return result;
+            }
             default: return defaultCase(theEObject);
         }
     }
@@ -319,6 +325,21 @@ public class ScoreSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseRest(Rest object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Bar Line</em>'.
+     * <!-- begin-user-doc -->
+     * This implementation returns null;
+     * returning a non-null result will terminate the switch.
+     * <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Bar Line</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseBarLine(BarLine object) {
         return null;
     }
 

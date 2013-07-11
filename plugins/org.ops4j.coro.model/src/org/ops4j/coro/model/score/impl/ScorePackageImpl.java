@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.ops4j.coro.model.score.AccidentalType;
+import org.ops4j.coro.model.score.BarLine;
 import org.ops4j.coro.model.score.Clef;
 import org.ops4j.coro.model.score.ClefSign;
 import org.ops4j.coro.model.score.Key;
@@ -20,6 +21,7 @@ import org.ops4j.coro.model.score.NoteType;
 import org.ops4j.coro.model.score.Part;
 import org.ops4j.coro.model.score.PartList;
 import org.ops4j.coro.model.score.Pitch;
+import org.ops4j.coro.model.score.Position;
 import org.ops4j.coro.model.score.Rest;
 import org.ops4j.coro.model.score.Score;
 import org.ops4j.coro.model.score.ScoreFactory;
@@ -123,6 +125,13 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass barLineEClass = null;
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -157,6 +166,13 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
 	private EEnum clefSignEEnum = null;
 
 	/**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    private EEnum positionEEnum = null;
+
+    /**
      * Creates an instance of the model <b>Package</b>, registered with
      * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
      * package URI value.
@@ -368,6 +384,15 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
      */
     public EAttribute getMeasure_Marker() {
         return (EAttribute)measureEClass.getEStructuralFeatures().get(5);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EReference getMeasure_BarLines() {
+        return (EReference)measureEClass.getEStructuralFeatures().get(6);
     }
 
     /**
@@ -588,6 +613,24 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EClass getBarLine() {
+        return barLineEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getBarLine_Position() {
+        return (EAttribute)barLineEClass.getEStructuralFeatures().get(0);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -632,6 +675,15 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
     }
 
 	/**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EEnum getPosition() {
+        return positionEEnum;
+    }
+
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
@@ -681,6 +733,7 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
         createEReference(measureEClass, MEASURE__CLEF);
         createEReference(measureEClass, MEASURE__PART);
         createEAttribute(measureEClass, MEASURE__MARKER);
+        createEReference(measureEClass, MEASURE__BAR_LINES);
 
         noteEClass = createEClass(NOTE);
         createEReference(noteEClass, NOTE__PITCH);
@@ -712,12 +765,16 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
         restEClass = createEClass(REST);
         createEAttribute(restEClass, REST__MEASURE);
 
+        barLineEClass = createEClass(BAR_LINE);
+        createEAttribute(barLineEClass, BAR_LINE__POSITION);
+
         // Create enums
         stepEEnum = createEEnum(STEP);
         noteTypeEEnum = createEEnum(NOTE_TYPE);
         accidentalTypeEEnum = createEEnum(ACCIDENTAL_TYPE);
         timeSymbolEEnum = createEEnum(TIME_SYMBOL);
         clefSignEEnum = createEEnum(CLEF_SIGN);
+        positionEEnum = createEEnum(POSITION);
     }
 
 	/**
@@ -772,6 +829,7 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
         initEReference(getMeasure_Clef(), this.getClef(), null, "clef", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getMeasure_Part(), this.getPart(), this.getPart_Measures(), "part", null, 1, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getMeasure_Marker(), ecorePackage.getEString(), "marker", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getMeasure_BarLines(), this.getBarLine(), null, "barLines", null, 1, -1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(noteEClass, Note.class, "Note", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getNote_Pitch(), this.getPitch(), null, "pitch", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -802,6 +860,9 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
 
         initEClass(restEClass, Rest.class, "Rest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEAttribute(getRest_Measure(), ecorePackage.getEBoolean(), "measure", null, 0, 1, Rest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+        initEClass(barLineEClass, BarLine.class, "BarLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        initEAttribute(getBarLine_Position(), this.getPosition(), "position", null, 0, 1, BarLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         // Initialize enums and add enum literals
         initEEnum(stepEEnum, Step.class, "Step");
@@ -839,6 +900,11 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
         addEEnumLiteral(clefSignEEnum, ClefSign.C);
         addEEnumLiteral(clefSignEEnum, ClefSign.F);
         addEEnumLiteral(clefSignEEnum, ClefSign.G);
+
+        initEEnum(positionEEnum, Position.class, "Position");
+        addEEnumLiteral(positionEEnum, Position.LEFT);
+        addEEnumLiteral(positionEEnum, Position.MIDDLE);
+        addEEnumLiteral(positionEEnum, Position.RIGHT);
 
         // Create resource
         createResource(eNS_URI);

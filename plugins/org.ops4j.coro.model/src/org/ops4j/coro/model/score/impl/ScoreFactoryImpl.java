@@ -69,6 +69,7 @@ public class ScoreFactoryImpl extends EFactoryImpl implements ScoreFactory {
             case ScorePackage.TIME: return createTime();
             case ScorePackage.CLEF: return createClef();
             case ScorePackage.REST: return createRest();
+            case ScorePackage.BAR_LINE: return createBarLine();
             default:
                 throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
         }
@@ -92,6 +93,8 @@ public class ScoreFactoryImpl extends EFactoryImpl implements ScoreFactory {
                 return createTimeSymbolFromString(eDataType, initialValue);
             case ScorePackage.CLEF_SIGN:
                 return createClefSignFromString(eDataType, initialValue);
+            case ScorePackage.POSITION:
+                return createPositionFromString(eDataType, initialValue);
             default:
                 throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
@@ -115,6 +118,8 @@ public class ScoreFactoryImpl extends EFactoryImpl implements ScoreFactory {
                 return convertTimeSymbolToString(eDataType, instanceValue);
             case ScorePackage.CLEF_SIGN:
                 return convertClefSignToString(eDataType, instanceValue);
+            case ScorePackage.POSITION:
+                return convertPositionToString(eDataType, instanceValue);
             default:
                 throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
@@ -242,6 +247,16 @@ public class ScoreFactoryImpl extends EFactoryImpl implements ScoreFactory {
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public BarLine createBarLine() {
+        BarLineImpl barLine = new BarLineImpl();
+        return barLine;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -341,6 +356,26 @@ public class ScoreFactoryImpl extends EFactoryImpl implements ScoreFactory {
     }
 
 	/**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public Position createPositionFromString(EDataType eDataType, String initialValue) {
+        Position result = Position.get(initialValue);
+        if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+        return result;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public String convertPositionToString(EDataType eDataType, Object instanceValue) {
+        return instanceValue == null ? null : instanceValue.toString();
+    }
+
+    /**
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
