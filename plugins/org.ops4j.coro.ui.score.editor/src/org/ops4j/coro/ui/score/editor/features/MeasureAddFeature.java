@@ -5,6 +5,7 @@ import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.context.IAddContext;
 import org.eclipse.graphiti.features.impl.AbstractAddShapeFeature;
 import org.eclipse.graphiti.mm.algorithms.MultiText;
+import org.eclipse.graphiti.mm.algorithms.Polyline;
 import org.eclipse.graphiti.mm.algorithms.Rectangle;
 import org.eclipse.graphiti.mm.algorithms.styles.Style;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
@@ -49,24 +50,22 @@ public class MeasureAddFeature extends AbstractAddShapeFeature {
         int height = 40;
         gaService.setLocationAndSize(rectangle, context.getX(), context.getY(), width, height);
 
-        Shape shape = peCreateService.createShape(containerShape, false);
-        gaService.createPlainPolyline(shape, new int[] { width-5, 0, width-5, height });
+        Shape barLineShape = peCreateService.createShape(containerShape, true);
+        Polyline polyline = gaService.createPlainPolyline(barLineShape, new int[] { 0, 0, 0, height });
+        gaService.setLocation(polyline, 95, 0);
         
-        Shape markerShape = peCreateService.createShape(containerShape, true);
+        Shape noteShape = peCreateService.createShape(containerShape, true);
 
         String text = MusicSymbol.REST_WHOLE.asString();
-        final MultiText textGa = gaService.createPlainMultiText(markerShape, text);
+        final MultiText textGa = gaService.createPlainMultiText(noteShape, text);
         int ascent = FontService.getInstance().getMusicFontAscent();
         gaService.setLocationAndSize(textGa, 40, 10-ascent, 60, 60);        
         Style musicStyle = StyleFactory.getStyleForMusic(getDiagram());
         textGa.setStyle(musicStyle);
-        
-        
-        // create link and wire it
+                
         link(containerShape, measure);
-        link(markerShape, measure.getNotes().get(0));
-
-        
+        link(noteShape, measure.getNotes().get(0));
+        link(barLineShape, measure.getBarLines().get(0));
         
         layoutPictogramElement(targetContainer);
         return containerShape;

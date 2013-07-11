@@ -8,10 +8,12 @@ import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.context.ICreateContext;
 import org.eclipse.graphiti.features.impl.AbstractCreateFeature;
 import org.eclipse.graphiti.mm.pictograms.ContainerShape;
+import org.ops4j.coro.model.score.BarLine;
 import org.ops4j.coro.model.score.Measure;
 import org.ops4j.coro.model.score.Note;
 import org.ops4j.coro.model.score.NoteType;
 import org.ops4j.coro.model.score.Part;
+import org.ops4j.coro.model.score.Position;
 import org.ops4j.coro.model.score.Rest;
 import org.ops4j.coro.model.score.ScoreFactory;
 
@@ -75,6 +77,10 @@ public class MeasureCreateFeature extends AbstractCreateFeature {
         Rest rest = ScoreFactory.eINSTANCE.createRest();
         note.setRest(rest);
         measure.getNotes().add(note);
+        
+        BarLine barLine = ScoreFactory.eINSTANCE.createBarLine();
+        barLine.setPosition(Position.RIGHT);
+        measure.getBarLines().add(barLine);
     }
 
 }
