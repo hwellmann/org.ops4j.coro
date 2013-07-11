@@ -16,13 +16,21 @@ import org.ops4j.coro.model.score.Pitch;
 import org.ops4j.coro.model.score.ScoreFactory;
 import org.ops4j.coro.model.score.Step;
 
-public class NotePitchFeature extends AbstractCustomFeature {
+public class AddNoteCommandFeature extends AbstractCustomFeature {
 
     private String pitchHint;
 
-    public NotePitchFeature(IFeatureProvider fp, String pitchHint) {
+    public AddNoteCommandFeature(IFeatureProvider fp, String pitchHint) {
         super(fp);
         this.pitchHint = pitchHint;
+    }
+
+    /**
+     * Name displayed in Undo/Redo menu entry.
+     */
+    @Override
+    public String getName() {
+        return "Add Note";
     }
 
     @Override

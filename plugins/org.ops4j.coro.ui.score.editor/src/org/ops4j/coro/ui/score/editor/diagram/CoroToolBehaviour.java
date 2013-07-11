@@ -4,7 +4,7 @@ import org.eclipse.graphiti.dt.IDiagramTypeProvider;
 import org.eclipse.graphiti.features.context.impl.CustomContext;
 import org.eclipse.graphiti.features.custom.ICustomFeature;
 import org.eclipse.graphiti.tb.DefaultToolBehaviorProvider;
-import org.ops4j.coro.ui.score.editor.features.NotePitchFeature;
+import org.ops4j.coro.ui.score.editor.features.AddNoteCommandFeature;
 
 
 public class CoroToolBehaviour extends DefaultToolBehaviorProvider {
@@ -17,7 +17,7 @@ public class CoroToolBehaviour extends DefaultToolBehaviorProvider {
     @Override
     public ICustomFeature getCommandFeature(CustomContext context, String hint) {
         if (hint != null && hint.startsWith("notePitch")) {
-            return new NotePitchFeature(getFeatureProvider(), hint);
+            return new AddNoteCommandFeature(getFeatureProvider(), hint);
         }
         return super.getCommandFeature(context, hint);
     }
