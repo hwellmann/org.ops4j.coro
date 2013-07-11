@@ -8,9 +8,11 @@ import org.eclipse.graphiti.features.context.IAddContext;
 import org.eclipse.graphiti.features.context.ILayoutContext;
 import org.eclipse.graphiti.mm.pictograms.PictogramElement;
 import org.eclipse.graphiti.ui.features.DefaultFeatureProvider;
+import org.ops4j.coro.model.score.Measure;
 import org.ops4j.coro.model.score.Part;
 import org.ops4j.coro.ui.score.editor.features.MeasureAddFeature;
 import org.ops4j.coro.ui.score.editor.features.MeasureCreateFeature;
+import org.ops4j.coro.ui.score.editor.features.MeasureLayoutFeature;
 import org.ops4j.coro.ui.score.editor.features.NoteAddFeature;
 import org.ops4j.coro.ui.score.editor.features.NoteCreateFeature;
 import org.ops4j.coro.ui.score.editor.features.PartAddFeature;
@@ -38,6 +40,9 @@ public class ScoreFeatureProvider extends DefaultFeatureProvider {
         Object bo = getBusinessObjectForPictogramElement(pe);
         if (bo instanceof Part) {
             return new PartLayoutFeature(this);
+        }
+        if (bo instanceof Measure) {
+            return new MeasureLayoutFeature(this);
         }
         return super.getLayoutFeature(context);
     }

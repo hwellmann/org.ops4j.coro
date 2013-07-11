@@ -45,11 +45,12 @@ public class NoteAddFeature extends AbstractAddShapeFeature {
         final MultiText textGa = gaService.createPlainMultiText(noteShape, text);
         int ascent = FontService.getInstance().getMusicFontAscent();
         int yOffset = getVerticalOffsetForPitch(note.getPitch());
-        gaService.setLocationAndSize(textGa, context.getX(), yOffset - ascent, 30, 60);
+        gaService.setLocationAndSize(textGa, context.getX(), yOffset - ascent, 20, 60);
         Style musicStyle = StyleFactory.getStyleForMusic(getDiagram());
         textGa.setStyle(musicStyle);
 
         link(noteShape, note);
+        layoutPictogramElement(measureContainer);
         return noteShape;
     }
     
