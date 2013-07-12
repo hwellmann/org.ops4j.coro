@@ -43,6 +43,8 @@ import org.ops4j.coro.model.score.Time;
  *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getPart <em>Part</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getMarker <em>Marker</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getBarLines <em>Bar Lines</em>}</li>
+ *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getDivisions <em>Divisions</em>}</li>
+ *   <li>{@link org.ops4j.coro.model.score.impl.MeasureImpl#getDuration <em>Duration</em>}</li>
  * </ul>
  * </p>
  *
@@ -118,6 +120,46 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
      * @ordered
      */
     protected EList<BarLine> barLines;
+
+    /**
+     * The default value of the '{@link #getDivisions() <em>Divisions</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDivisions()
+     * @generated
+     * @ordered
+     */
+    protected static final int DIVISIONS_EDEFAULT = 0;
+
+    /**
+     * The cached value of the '{@link #getDivisions() <em>Divisions</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDivisions()
+     * @generated
+     * @ordered
+     */
+    protected int divisions = DIVISIONS_EDEFAULT;
+
+    /**
+     * The default value of the '{@link #getDuration() <em>Duration</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDuration()
+     * @generated
+     * @ordered
+     */
+    protected static final int DURATION_EDEFAULT = 0;
+
+    /**
+     * The cached value of the '{@link #getDuration() <em>Duration</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see #getDuration()
+     * @generated
+     * @ordered
+     */
+    protected int duration = DURATION_EDEFAULT;
 
     /**
      * <!-- begin-user-doc -->
@@ -355,6 +397,48 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public int getDivisions() {
+        return divisions;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setDivisions(int newDivisions) {
+        int oldDivisions = divisions;
+        divisions = newDivisions;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__DIVISIONS, oldDivisions, divisions));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public int getDuration() {
+        return duration;
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public void setDuration(int newDuration) {
+        int oldDuration = duration;
+        duration = newDuration;
+        if (eNotificationRequired())
+            eNotify(new ENotificationImpl(this, Notification.SET, ScorePackage.MEASURE__DURATION, oldDuration, duration));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -432,6 +516,10 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
                 return getMarker();
             case ScorePackage.MEASURE__BAR_LINES:
                 return getBarLines();
+            case ScorePackage.MEASURE__DIVISIONS:
+                return getDivisions();
+            case ScorePackage.MEASURE__DURATION:
+                return getDuration();
         }
         return super.eGet(featureID, resolve, coreType);
     }
@@ -468,6 +556,12 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
                 getBarLines().clear();
                 getBarLines().addAll((Collection<? extends BarLine>)newValue);
                 return;
+            case ScorePackage.MEASURE__DIVISIONS:
+                setDivisions((Integer)newValue);
+                return;
+            case ScorePackage.MEASURE__DURATION:
+                setDuration((Integer)newValue);
+                return;
         }
         super.eSet(featureID, newValue);
     }
@@ -501,6 +595,12 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
             case ScorePackage.MEASURE__BAR_LINES:
                 getBarLines().clear();
                 return;
+            case ScorePackage.MEASURE__DIVISIONS:
+                setDivisions(DIVISIONS_EDEFAULT);
+                return;
+            case ScorePackage.MEASURE__DURATION:
+                setDuration(DURATION_EDEFAULT);
+                return;
         }
         super.eUnset(featureID);
     }
@@ -527,6 +627,10 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
                 return MARKER_EDEFAULT == null ? marker != null : !MARKER_EDEFAULT.equals(marker);
             case ScorePackage.MEASURE__BAR_LINES:
                 return barLines != null && !barLines.isEmpty();
+            case ScorePackage.MEASURE__DIVISIONS:
+                return divisions != DIVISIONS_EDEFAULT;
+            case ScorePackage.MEASURE__DURATION:
+                return duration != DURATION_EDEFAULT;
         }
         return super.eIsSet(featureID);
     }
@@ -543,6 +647,10 @@ public class MeasureImpl extends MinimalEObjectImpl.Container implements Measure
         StringBuffer result = new StringBuffer(super.toString());
         result.append(" (marker: ");
         result.append(marker);
+        result.append(", divisions: ");
+        result.append(divisions);
+        result.append(", duration: ");
+        result.append(duration);
         result.append(')');
         return result.toString();
     }

@@ -87,6 +87,14 @@
         <element xmi:type="ecore:EAttribute" href="CoroScore.ecore#//Measure/marker"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_KcKfQeTPEeKUme-FqHVzWQ"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_QKFjsOsXEeKGXJJHvvN5QA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="CoroScore.ecore#//Measure/divisions"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_QKFjsesXEeKGXJJHvvN5QA"/>
+      </children>
+      <children xmi:type="notation:Node" xmi:id="_TPnKMOsXEeKGXJJHvvN5QA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="CoroScore.ecore#//Measure/duration"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_TPnKMesXEeKGXJJHvvN5QA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_MP-UMeF3EeKx-okVn3lEQQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_MP-UMuF3EeKx-okVn3lEQQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_MP-UM-F3EeKx-okVn3lEQQ"/>

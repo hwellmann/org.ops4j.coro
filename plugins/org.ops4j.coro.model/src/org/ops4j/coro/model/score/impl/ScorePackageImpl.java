@@ -397,6 +397,24 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
 
     /**
      * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getMeasure_Divisions() {
+        return (EAttribute)measureEClass.getEStructuralFeatures().get(7);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    public EAttribute getMeasure_Duration() {
+        return (EAttribute)measureEClass.getEStructuralFeatures().get(8);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      */
@@ -734,6 +752,8 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
         createEReference(measureEClass, MEASURE__PART);
         createEAttribute(measureEClass, MEASURE__MARKER);
         createEReference(measureEClass, MEASURE__BAR_LINES);
+        createEAttribute(measureEClass, MEASURE__DIVISIONS);
+        createEAttribute(measureEClass, MEASURE__DURATION);
 
         noteEClass = createEClass(NOTE);
         createEReference(noteEClass, NOTE__PITCH);
@@ -829,7 +849,9 @@ public class ScorePackageImpl extends EPackageImpl implements ScorePackage {
         initEReference(getMeasure_Clef(), this.getClef(), null, "clef", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEReference(getMeasure_Part(), this.getPart(), this.getPart_Measures(), "part", null, 1, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         initEAttribute(getMeasure_Marker(), ecorePackage.getEString(), "marker", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        initEReference(getMeasure_BarLines(), this.getBarLine(), null, "barLines", null, 1, -1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEReference(getMeasure_BarLines(), this.getBarLine(), null, "barLines", null, 0, -1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getMeasure_Divisions(), ecorePackage.getEInt(), "divisions", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        initEAttribute(getMeasure_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, Measure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         initEClass(noteEClass, Note.class, "Note", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
         initEReference(getNote_Pitch(), this.getPitch(), null, "pitch", null, 0, 1, Note.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

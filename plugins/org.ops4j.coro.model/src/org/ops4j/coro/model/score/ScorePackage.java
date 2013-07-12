@@ -316,13 +316,31 @@ public interface ScorePackage extends EPackage {
     int MEASURE__BAR_LINES = 6;
 
     /**
+     * The feature id for the '<em><b>Divisions</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MEASURE__DIVISIONS = 7;
+
+    /**
+     * The feature id for the '<em><b>Duration</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     * @ordered
+     */
+    int MEASURE__DURATION = 8;
+
+    /**
      * The number of structural features of the '<em>Measure</em>' class.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
      * @generated
      * @ordered
      */
-	int MEASURE_FEATURE_COUNT = 7;
+	int MEASURE_FEATURE_COUNT = 9;
 
 	/**
      * The number of operations of the '<em>Measure</em>' class.
@@ -955,6 +973,28 @@ public interface ScorePackage extends EPackage {
     EReference getMeasure_BarLines();
 
     /**
+     * Returns the meta object for the attribute '{@link org.ops4j.coro.model.score.Measure#getDivisions <em>Divisions</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Divisions</em>'.
+     * @see org.ops4j.coro.model.score.Measure#getDivisions()
+     * @see #getMeasure()
+     * @generated
+     */
+    EAttribute getMeasure_Divisions();
+
+    /**
+     * Returns the meta object for the attribute '{@link org.ops4j.coro.model.score.Measure#getDuration <em>Duration</em>}'.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @return the meta object for the attribute '<em>Duration</em>'.
+     * @see org.ops4j.coro.model.score.Measure#getDuration()
+     * @see #getMeasure()
+     * @generated
+     */
+    EAttribute getMeasure_Duration();
+
+    /**
      * Returns the meta object for class '{@link org.ops4j.coro.model.score.Note <em>Note</em>}'.
      * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1471,6 +1511,22 @@ public interface ScorePackage extends EPackage {
          * @generated
          */
         EReference MEASURE__BAR_LINES = eINSTANCE.getMeasure_BarLines();
+
+        /**
+         * The meta object literal for the '<em><b>Divisions</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute MEASURE__DIVISIONS = eINSTANCE.getMeasure_Divisions();
+
+        /**
+         * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
+         * <!-- begin-user-doc -->
+         * <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute MEASURE__DURATION = eINSTANCE.getMeasure_Duration();
 
         /**
          * The meta object literal for the '{@link org.ops4j.coro.model.score.impl.NoteImpl <em>Note</em>}' class.

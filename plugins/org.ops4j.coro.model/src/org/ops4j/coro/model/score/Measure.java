@@ -21,6 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.ops4j.coro.model.score.Measure#getPart <em>Part</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.Measure#getMarker <em>Marker</em>}</li>
  *   <li>{@link org.ops4j.coro.model.score.Measure#getBarLines <em>Bar Lines</em>}</li>
+ *   <li>{@link org.ops4j.coro.model.score.Measure#getDivisions <em>Divisions</em>}</li>
+ *   <li>{@link org.ops4j.coro.model.score.Measure#getDuration <em>Duration</em>}</li>
  * </ul>
  * </p>
  *
@@ -190,9 +192,61 @@ public interface Measure extends EObject {
      * <!-- end-user-doc -->
      * @return the value of the '<em>Bar Lines</em>' containment reference list.
      * @see org.ops4j.coro.model.score.ScorePackage#getMeasure_BarLines()
-     * @model containment="true" required="true"
+     * @model containment="true"
      * @generated
      */
     EList<BarLine> getBarLines();
+
+    /**
+     * Returns the value of the '<em><b>Divisions</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Divisions</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Divisions</em>' attribute.
+     * @see #setDivisions(int)
+     * @see org.ops4j.coro.model.score.ScorePackage#getMeasure_Divisions()
+     * @model
+     * @generated
+     */
+    int getDivisions();
+
+    /**
+     * Sets the value of the '{@link org.ops4j.coro.model.score.Measure#getDivisions <em>Divisions</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Divisions</em>' attribute.
+     * @see #getDivisions()
+     * @generated
+     */
+    void setDivisions(int value);
+
+    /**
+     * Returns the value of the '<em><b>Duration</b></em>' attribute.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Duration</em>' attribute isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     * @return the value of the '<em>Duration</em>' attribute.
+     * @see #setDuration(int)
+     * @see org.ops4j.coro.model.score.ScorePackage#getMeasure_Duration()
+     * @model
+     * @generated
+     */
+    int getDuration();
+
+    /**
+     * Sets the value of the '{@link org.ops4j.coro.model.score.Measure#getDuration <em>Duration</em>}' attribute.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @param value the new value of the '<em>Duration</em>' attribute.
+     * @see #getDuration()
+     * @generated
+     */
+    void setDuration(int value);
 
 } // Measure
