@@ -31,6 +31,7 @@ public class MeasureLayoutFeature extends AbstractLayoutFeature {
         for (Note note : measure.getNotes()) {
             Shape noteContainer = (Shape) getFeatureProvider()
                 .getPictogramElementForBusinessObject(note);
+            // layoutPictogramElement(noteContainer);
             GraphicsAlgorithm ga = noteContainer.getGraphicsAlgorithm();
             ga.setX(x);
             x += ga.getWidth();
@@ -46,4 +47,6 @@ public class MeasureLayoutFeature extends AbstractLayoutFeature {
         context.getPictogramElement().getGraphicsAlgorithm().setWidth(x + 5);
         return true;
     }
+    
+    
 }

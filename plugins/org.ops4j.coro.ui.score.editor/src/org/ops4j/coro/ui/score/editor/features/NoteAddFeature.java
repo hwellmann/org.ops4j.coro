@@ -50,7 +50,7 @@ public class NoteAddFeature extends AbstractAddShapeFeature {
         textGa.setStyle(musicStyle);
 
         link(noteShape, note);
-        layoutPictogramElement(measureContainer);
+        // layoutPictogramElement(measureContainer);
         return noteShape;
     }
     

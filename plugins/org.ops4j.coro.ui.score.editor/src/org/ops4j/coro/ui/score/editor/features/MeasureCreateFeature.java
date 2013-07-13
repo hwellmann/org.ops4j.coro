@@ -23,7 +23,7 @@ public class MeasureCreateFeature extends AbstractCreateFeature {
      * Divisions per quarter note.
      * TODO make configurable 
      */
-    private static final int DIVISIONS = 24;
+    public static final int DIVISIONS = 24;
 
     public MeasureCreateFeature(IFeatureProvider fp) {
         super(fp, "Measure", "Create a measure");
@@ -48,8 +48,7 @@ public class MeasureCreateFeature extends AbstractCreateFeature {
         List<EObject> containerObjects = context.getTargetContainer().getLink()
             .getBusinessObjects();
 
-        Measure measure = ScoreFactory.eINSTANCE.createMeasure();
-        fillMeasureWithRest(measure);
+        Measure measure = createEmptyMeasure();
 
         EObject container = containerObjects.get(0);
         if (container instanceof Part) {
@@ -69,7 +68,11 @@ public class MeasureCreateFeature extends AbstractCreateFeature {
         return new Object[] { measure };
     }
 
-    private void fillMeasureWithRest(Measure measure) {
+    private Measure createEmptyMeasure() {
+        // TODO quarter beats hard-coded for now
+        Measure measure = ScoreFactory.eINSTANCE.createMeasure();
+        measure.setDivisions(DIVISIONS);
+        measure.setDuration(4 * DIVISIONS);
         Note note = ScoreFactory.eINSTANCE.createNote();
         note.setDuration(4 * DIVISIONS);
         note.setType(NoteType.WHOLE);
@@ -81,6 +84,7 @@ public class MeasureCreateFeature extends AbstractCreateFeature {
         BarLine barLine = ScoreFactory.eINSTANCE.createBarLine();
         barLine.setPosition(Position.RIGHT);
         measure.getBarLines().add(barLine);
+        return measure;
     }
 
 }

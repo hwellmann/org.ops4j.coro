@@ -1,6 +1,12 @@
 package org.ops4j.coro.ui.score.editor.features;
 
-import static org.ops4j.coro.model.score.Step.*;
+import static org.ops4j.coro.model.score.Step.A;
+import static org.ops4j.coro.model.score.Step.B;
+import static org.ops4j.coro.model.score.Step.C;
+import static org.ops4j.coro.model.score.Step.D;
+import static org.ops4j.coro.model.score.Step.E;
+import static org.ops4j.coro.model.score.Step.F;
+import static org.ops4j.coro.model.score.Step.G;
 
 import java.util.List;
 
@@ -8,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.graphiti.features.IFeatureProvider;
 import org.eclipse.graphiti.features.context.ICreateContext;
 import org.eclipse.graphiti.features.impl.AbstractCreateFeature;
-import org.eclipse.graphiti.mm.pictograms.ContainerShape;
 import org.ops4j.coro.model.score.Measure;
 import org.ops4j.coro.model.score.Note;
 import org.ops4j.coro.model.score.NoteType;
@@ -25,10 +30,6 @@ public class NoteCreateFeature extends AbstractCreateFeature {
     }
 
     public boolean canCreate(ICreateContext context) {
-        ContainerShape target = context.getTargetContainer();
-        if (!(target instanceof ContainerShape)) {
-            return false;
-        }
         List<EObject> containerObjects = context.getTargetContainer().getLink()
             .getBusinessObjects();
         if (containerObjects.isEmpty()) {
