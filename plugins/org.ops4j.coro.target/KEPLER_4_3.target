@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?>
+
+<target name="KEPLER_4_3" sequenceNumber="36">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.sdk.ide" version="4.3.0.I20130605-2000"/>
+<unit id="org.eclipse.graphiti.sdk.feature.feature.group" version="0.10.0.v20130612-0936"/>
+<repository location="http://download.eclipse.org/releases/kepler"/>
+</location>
+</locations>
+</target>
