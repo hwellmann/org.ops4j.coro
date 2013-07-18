@@ -55,13 +55,11 @@
 						<artifactId>target-platform-configuration</artifactId>
 						<version>${tycho.version}</version>
 						<configuration>
-							<!-- add target file content to target platform -->
 							<target>
 								<artifact>
 									<groupId>org.ops4j.coro</groupId>
 									<artifactId>org.ops4j.coro.target</artifactId>
-									<version>0.0.1-SNAPSHOT</version>
-									<classifier>KEPLER_4_3</classifier>
+									<version>${project.version}</version>
 								</artifact>
 							</target>
 							<environments>
