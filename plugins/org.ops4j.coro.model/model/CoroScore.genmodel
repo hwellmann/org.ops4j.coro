@@ -43,6 +43,11 @@
       <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//ClefSign/F"/>
       <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//ClefSign/G"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CoroScore.ecore#//Position">
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//Position/LEFT"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//Position/MIDDLE"/>
+      <genEnumLiterals ecoreEnumLiteral="CoroScore.ecore#//Position/RIGHT"/>
+    </genEnums>
     <genClasses ecoreClass="CoroScore.ecore#//Score">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Score/partList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Score/parts"/>
@@ -62,6 +67,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Measure/time"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Measure/clef"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference CoroScore.ecore#//Measure/part"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Measure/marker"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Measure/barLines"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Measure/divisions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Measure/duration"/>
     </genClasses>
     <genClasses ecoreClass="CoroScore.ecore#//Note">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Note/pitch"/>
@@ -69,6 +78,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Note/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Note/accidental"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference CoroScore.ecore#//Note/measure"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CoroScore.ecore#//Note/rest"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Note/dots"/>
     </genClasses>
     <genClasses ecoreClass="CoroScore.ecore#//Pitch">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Pitch/octave"/>
@@ -87,6 +98,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Clef/sign"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Clef/line"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Clef/octaveChange"/>
+    </genClasses>
+    <genClasses ecoreClass="CoroScore.ecore#//Rest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//Rest/measure"/>
+    </genClasses>
+    <genClasses ecoreClass="CoroScore.ecore#//BarLine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CoroScore.ecore#//BarLine/position"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

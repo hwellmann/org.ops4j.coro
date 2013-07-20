@@ -1,17 +1,73 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.ops4j.coro</groupId>
-		<artifactId>org.ops4j.coro.reactor</artifactId>
-		<version>0.1.0-SNAPSHOT</version>
-		<relativePath>../org.ops4j.coro.reactor</relativePath>
-	</parent>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.ops4j.coro</groupId>
+        <artifactId>org.ops4j.coro.reactor</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+        <relativePath>../org.ops4j.coro.reactor</relativePath>
+    </parent>
 
 
-	<groupId>org.ops4j.coro</groupId>
-	<artifactId>org.ops4j.coro.model</artifactId>
-	<packaging>eclipse-plugin</packaging>
+    <groupId>org.ops4j.coro</groupId>
+    <artifactId>org.ops4j.coro.model</artifactId>
+    <packaging>eclipse-plugin</packaging>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.eclipse.tycho.extras</groupId>
+                <artifactId>tycho-eclipserun-plugin</artifactId>
+                <version>${tycho.version}</version>
+                <configuration>
+                    <dependencies>
+                        <dependency>
+                            <artifactId>org.eclipse.emf.importer.ecore</artifactId>
+                            <type>eclipse-plugin</type>
+                        </dependency>
+                        <dependency>
+                            <artifactId>org.eclipse.emf.codegen.ecore</artifactId>
+                            <type>eclipse-plugin</type>
+                        </dependency>
+                    </dependencies>                    
+                    <repositories>
+                        <repository>
+                            <id>kepler</id>
+                            <layout>p2</layout>
+                            <url>http://download.eclipse.org/releases/kepler</url>
+                        </repository>
+                    </repositories>
+                </configuration>
+                <executions>
+                    <!-- generate CoroScore.genmodel from CoroScore.ecore -->
+                    <execution>
+                        <id>generate-genmodel</id>
+                        <goals>
+                            <goal>eclipse-run</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                          <!-- no linebreaks allowed in the following arguments line -->
+                          <appArgLine>-data target/workspace -application org.eclipse.emf.importer.ecore.Ecore2GenModel model/CoroScore.ecore target/CoroScore.genmodel -modelProject /org.ops4j.coro.model src -modelPluginID org.ops4j.coro.model -package urn:org.ops4j.coro:score org.ops4j.coro.model Score -jdkLevel 7.0</appArgLine>
+                        </configuration>
+                    </execution>
+                    <!-- generate Java sources for CoroScore Ecore model from genmodel -->
+                    <execution>
+                        <id>generate-java</id>
+                        <goals>
+                            <goal>eclipse-run</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                          <!-- no linebreaks allowed in the following arguments line -->
+                          <appArgLine>-data target/workspace -application org.eclipse.emf.codegen.ecore.Generator -projects ${basedir} -model ${basedir}/model/CoroScore.genmodel target/generated-sources/emf</appArgLine>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
