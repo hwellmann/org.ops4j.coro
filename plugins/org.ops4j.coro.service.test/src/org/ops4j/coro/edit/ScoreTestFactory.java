@@ -56,6 +56,7 @@ public class ScoreTestFactory {
     public Note createQuarterNote(Step step) {
         Note quarter = factory.createNote();
         quarter.setDuration(DIVISIONS_PER_QUARTER);
+        quarter.setType(NoteType.QUARTER);
         Pitch pitch = factory.createPitch();
         pitch.setStep(step);
         quarter.setPitch(pitch);
@@ -65,8 +66,10 @@ public class ScoreTestFactory {
     public Note createHalfNote(Step step) {
         Note half = factory.createNote();
         half.setDuration(2 * DIVISIONS_PER_QUARTER);
+        half.setType(NoteType.HALF);
         Pitch pitch = factory.createPitch();
         pitch.setStep(step);
+        pitch.setOctave(4);
         half.setPitch(pitch);
         return half;        
     }
