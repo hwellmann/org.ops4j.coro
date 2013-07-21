@@ -14,6 +14,7 @@
 		<module>../org.ops4j.coro.target</module>
 		<module>../org.ops4j.coro.main</module>
 		<module>../org.ops4j.coro.model</module>
+        <module>../org.ops4j.coro.service</module>
 		<module>../org.ops4j.coro.ui.score.editor</module>
 		<module>../org.ops4j.coro.repo</module>
 	</modules>
