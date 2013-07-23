@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.ops4j.coro.model.score.Measure;
 import org.ops4j.coro.model.score.Note;
+import org.ops4j.coro.model.score.NoteType;
 import org.ops4j.coro.model.score.Part;
 import org.ops4j.coro.model.score.Step;
 
@@ -41,11 +42,13 @@ public class ScoreEditServiceTest {
         assertThat(measure.getNotes().size(), is(2));
         assertThat(measure.getNotes().get(0), is(sameInstance(halfNote)));
         assertThat(halfNote.getMeasure(), is(measure));
+        assertThat(halfNote.getType(), is(NoteType.HALF));
         
         Note halfRest = measure.getNotes().get(1);
         assertThat(halfRest.getDuration(), is(2 * DIVISIONS_PER_QUARTER));
         assertThat(halfRest, is(sameInstance(firstNote)));        
         assertThat(halfRest.getMeasure(), is(measure));
+        assertThat(halfRest.getType(), is(NoteType.HALF));
     }
 
     @Test
@@ -80,6 +83,7 @@ public class ScoreEditServiceTest {
         
         assertThat(measure.getNotes().size(), is(2));
         assertThat(measure.getNotes().get(0), is(sameInstance(halfNoteA)));
+        assertThat(halfNoteA.getType(), is(NoteType.HALF));
         
         Note halfRest = measure.getNotes().get(1);
         assertThat(halfRest.getDuration(), is(2 * DIVISIONS_PER_QUARTER));
@@ -88,7 +92,8 @@ public class ScoreEditServiceTest {
         Note secondNote = measure.getNotes().get(1);
         
         assertThat(secondNote.getDuration(), is(2 * DIVISIONS_PER_QUARTER));
-        assertThat(secondNote.getPitch().getStep(), is(Step.G));        
+        assertThat(secondNote.getPitch().getStep(), is(Step.G));
+        assertThat(secondNote.getType(), is(NoteType.HALF));
     }
 
     @Test
@@ -111,10 +116,12 @@ public class ScoreEditServiceTest {
         Note thirdNote = measure.getNotes().get(2);
         
         assertThat(secondNote.getDuration(), is(DIVISIONS_PER_QUARTER));
-        assertThat(secondNote.getPitch().getStep(), is(Step.G));        
+        assertThat(secondNote.getPitch().getStep(), is(Step.G));
+        assertThat(secondNote.getType(), is(NoteType.QUARTER));
 
         assertThat(thirdNote.getDuration(), is(DIVISIONS_PER_QUARTER));
-        assertThat(thirdNote.getRest(), is(notNullValue()));        
+        assertThat(thirdNote.getRest(), is(notNullValue()));
+        assertThat(thirdNote.getType(), is(NoteType.QUARTER));
     }
 
 }

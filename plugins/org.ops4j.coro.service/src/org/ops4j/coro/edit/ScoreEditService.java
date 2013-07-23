@@ -5,9 +5,12 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.ops4j.coro.model.score.Measure;
 import org.ops4j.coro.model.score.Note;
+import org.ops4j.coro.model.score.NoteType;
 import org.ops4j.coro.model.score.ScoreFactory;
 
 public class ScoreEditService {
+    
+    private NoteTypeProducer noteTypeProducer = new NoteTypeProducer();
 
     public void overwriteNote(Note currentNote, Note newNote) {
         assert newNote.getMeasure() == null;
@@ -19,15 +22,15 @@ public class ScoreEditService {
         int currentIndex = notes.indexOf(currentNote);
         int currentDuration = currentNote.getDuration();
         int newDuration = newNote.getDuration();
+        int start = getRelativeStart(currentNote);
         if (newDuration == currentDuration) {
             replacePitch(currentNote, newNote);
         }
         else if (newDuration < currentDuration) {
-            reduceDuration(currentNote, newDuration);
+            reduceDuration(start, currentNote, newDuration);
             insertBefore(currentNote, newNote);
         }
         else {
-            int start = getRelativeStart(currentNote);
             int end = start + newDuration;
             Note tail = null;
             if (end > currentMeasure.getDuration()) {
@@ -100,11 +103,16 @@ public class ScoreEditService {
         return tail;
     }
 
-    private Note reduceDuration(Note currentNote, int delta) {
+    private Note reduceDuration(int offset, Note currentNote, int delta) {
         int remainingDuration = currentNote.getDuration() - delta;
         assert remainingDuration > 0;
 
         currentNote.setDuration(remainingDuration);
+        List<NoteType> noteTypes = noteTypeProducer.getNoteTypes(offset, remainingDuration);
+        currentNote.setType(noteTypes.get(0));
+        if (noteTypes.size() > 1) {
+            System.err.println("TODO split note into multiple heads");
+        }
         return currentNote;
     }
 
