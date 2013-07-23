@@ -1,31 +1,39 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.ops4j.coro</groupId>
-		<artifactId>org.ops4j.coro.reactor</artifactId>
-		<version>0.1.0-SNAPSHOT</version>
-		<relativePath>../org.ops4j.coro.reactor</relativePath>
-	</parent>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.ops4j.coro</groupId>
+        <artifactId>org.ops4j.coro.reactor</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+        <relativePath>../org.ops4j.coro.reactor</relativePath>
+    </parent>
 
 
-	<groupId>org.ops4j.coro</groupId>
-	<artifactId>org.ops4j.coro.service.test</artifactId>
-	<packaging>eclipse-test-plugin</packaging>
+    <groupId>org.ops4j.coro</groupId>
+    <artifactId>org.ops4j.coro.service.test</artifactId>
+    <packaging>eclipse-test-plugin</packaging>
 
     <build>
         <plugins>
             <plugin>
-               <groupId>org.eclipse.tycho</groupId>
-               <artifactId>tycho-surefire-plugin</artifactId>
-               <version>${tycho.version}</version>
-               <executions>
-                 <execution>
-                   <goals>
-                     <goal>test</goal>
-                   </goals>
-                 </execution>
-               </executions>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-surefire-plugin</artifactId>
+                <version>${tycho.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dependencies>
+                        <dependency>
+                            <artifactId>ch.qos.logback.slf4j</artifactId>
+                            <type>eclipse-plugin</type>
+                        </dependency>
+                    </dependencies>
+                </configuration>
             </plugin>
         </plugins>
     </build>

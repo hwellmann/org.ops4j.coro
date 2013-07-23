@@ -7,8 +7,12 @@ import org.ops4j.coro.model.score.Measure;
 import org.ops4j.coro.model.score.Note;
 import org.ops4j.coro.model.score.NoteType;
 import org.ops4j.coro.model.score.ScoreFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ScoreEditService {
+    
+    private static Logger log = LoggerFactory.getLogger(ScoreEditService.class);
     
     private NoteTypeProducer noteTypeProducer = new NoteTypeProducer();
 
@@ -111,7 +115,7 @@ public class ScoreEditService {
         List<NoteType> noteTypes = noteTypeProducer.getNoteTypes(offset, remainingDuration);
         currentNote.setType(noteTypes.get(0));
         if (noteTypes.size() > 1) {
-            System.err.println("TODO split note into multiple heads");
+            log.warn("TODO split note into multiple heads");
         }
         return currentNote;
     }
